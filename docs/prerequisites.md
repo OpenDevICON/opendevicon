@@ -35,6 +35,11 @@ The source code is found on [GitHub](https://github.com/icon-project/icon-sdk-py
 
 ICON SDK for Python development and execution requires the following environments.
 
--Python
-  -Version: Python 3.6+
-  -IDE: Pycharm is recommended.
+- Python
+  - Version: Python 3.6+
+  - IDE: Pycharm is recommended.
+
+  It can be installed using pip as follows:
+  ```bash
+  $ pip install iconsdk
+  ```
