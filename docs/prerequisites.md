@@ -1,5 +1,7 @@
----
-description: Using Python SDK in Jupyter Notebook for interacting with SCORE
----
-# Getting juypter notebook
-This is new file
+# Prerequisites
+
+## Getting juypter notebook
+
+[**Jupyter Notebook**](https://jupyter.org/) is an application widely used in Data Science domain for creating and sharing documents that contains Live code, Equations, Visualizations, and Explanatory text.
+
+## Installing PythonSDK

@@ -8,9 +8,9 @@
   * [SCORE methods](docs/scoreMethods.md)
 
 ## Jupyter Notebook
-* [SCORE interaction](scoreInteraction.md)
-  * [SCORE Deployment](scoreDeploy.md)
-  * [Calling SCORE Methods](callScoreMethods.md)
-  * [ICX Transfer](icxTransfer.md)
+
+* [SCORE Deployment](scoreDeploy.md)
+* [Calling SCORE Methods](callScoreMethods.md)
+* [ICX Transfer](icxTransfer.md)
 
 
