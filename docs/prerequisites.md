@@ -39,7 +39,7 @@ ICON SDK for Python development and execution requires the following environment
   - Version: Python 3.6+
   - IDE: Pycharm is recommended.
 
-  It can be installed using pip as follows:
+It can be installed using pip as follows:
   ```bash
   $ pip install iconsdk
   ```
