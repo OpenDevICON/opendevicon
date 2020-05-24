@@ -1,6 +1,6 @@
 ---
-description: Test File for the Gitbook
+description: Using Python SDK in Jupyter Notebook for interacting with SCORE
 ---
 
-# TestinGitbook
+# SCORE interaction using Jupyter Notebook
 
