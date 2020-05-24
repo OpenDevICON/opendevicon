@@ -31,3 +31,10 @@ $ jupyter-notebook
 
 
 ## Installing PythonSDK
+The source code is found on [GitHub](https://github.com/icon-project/icon-sdk-python)
+
+ICON SDK for Python development and execution requires the following environments.
+
+-Python
+  -Version: Python 3.6+
+  -IDE: Pycharm is recommended.
