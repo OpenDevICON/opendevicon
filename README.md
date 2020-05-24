@@ -1,6 +1,6 @@
----
-description: Using Python SDK in Jupyter Notebook for interacting with SCORE
----
+# Welcome
 
-# SCORE interaction using Jupyter Notebook
+## SCORE interaction using Jupyter Notebook
+
+
 
