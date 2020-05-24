@@ -6,8 +6,7 @@
   * [Installing Python SDK for Python](docs/installPythonSDK.md)
 * [Sample SCORE](docs/sampleScore.md)
   * [SCORE methods](docs/scoreMethods.md)
-* [SCORE interaction using ICON SDK in Jupyter Notebook
-](scoreInteraction.md)
+* [SCORE interaction using ICON SDK in Jupyter Notebook](scoreInteraction.md)
   * [Importing packages](docs/importPackages.md)
   * [Setting up environment](setEnv.md)
   * [SCORE Deployment](scoreDeploy.md)
