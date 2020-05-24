@@ -13,4 +13,9 @@
 * [Calling SCORE Methods](callScoreMethods.md)
 * [ICX Transfer](icxTransfer.md)
 
+## SCORE library
+* [Deck module](scoreDeploy.md)
+* [Random function generation](scoreDeploy.md)
+
+
 
