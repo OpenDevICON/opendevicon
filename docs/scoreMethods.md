@@ -65,7 +65,7 @@ def call_bet(self, upper: int, lower: int, user_seed: str = '', side_bet_amount:
 ```
 
 ## Readonly Methods
-Methods decorated with **@external(readonly=True)** will have read-only access to the state database.They can be used to provide the required contract information.
+Methods decorated with **@external(readonly=True)** will have read-only access to the state database. They are used to provide the required contract information.
 {% hint style="info" %}
 No transaction is performed while calling readonly methods
 {% endhint%}

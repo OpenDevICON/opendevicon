@@ -1,2 +1,0 @@
-# SCORE methods
-

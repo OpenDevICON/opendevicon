@@ -9,12 +9,13 @@
 
 ## Jupyter Notebook
 
-* [SCORE Deployment](jupyter-notebook/score-deployment.md)
-* [Calling SCORE Methods](jupyter-notebook/calling-score-methods.md)
-* [ICX Transfer](jupyter-notebook/icx-transfer.md)
+* [SCORE Interaction](docs/scoreInteraction.md)
+  * [SCORE Deployment](docs/scoreDeploy.md)
+  * [Calling SCORE Methods](docs/callscoreMethods.md)
+* [ICX Transfer](docs/icxTransfer.md)
 
 ## SCORE library
 
-* [Deck module](score-library/deck-module.md)
-* [Random function generation](score-library/random-function-generation.md)
+* [Deck module]
+* [Random function generation]
 

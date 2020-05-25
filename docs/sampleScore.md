@@ -9,7 +9,6 @@ You can access the project folder from [**github**](https://github.com/kailehok/
 The following is the code snippet for the dice SCORE:-
 
 ```py
-# %load dice/dice.py
 from iconservice import *
 
 TAG = "DICE"
