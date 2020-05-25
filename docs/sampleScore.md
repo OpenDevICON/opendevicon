@@ -2,8 +2,12 @@
 
 Before showing the usage of PythonSDK in Jupyter Notebook, we will require a SCORE to be interacted with. For this documentation we choose to use one of the SCORE having highest number of transactions in ICON blockchain ie Dice SCORE of [ICONbet](https://iconbet.io/).
 
+Some changes have been made to the actual SCORE to make it easier for demonstration purpose.
+You can access the project folder from [here].(https://github.com/kailehok/opendevicon/tree/master/dice)
 
 ## Dice SCORE
+The following is the code snippet for the dice SCORE:-
+
 ```py
 # %load dice/dice.py
 from iconservice import *
@@ -17,7 +21,7 @@ BET_MIN = 1000000000000000
 SIDE_BET_TYPES = ["digits_match", "icon_logo1", "icon_logo2"]
 SIDE_BET_MULTIPLIERS = {"digits_match": 9.5, "icon_logo1": 5, "icon_logo2": 95}
 BET_LIMIT_RATIOS_SIDE_BET = {"digits_match": 1140, "icon_logo1": 540, "icon_logo2": 12548}
-MINIMUM_TREASURY = 250000
+MINIMUM_TREASURY = 250
 
 
 
@@ -80,22 +84,6 @@ class Dice(IconScoreBase):
     @external
     def call_bet(self, upper: int, lower: int, user_seed: str = '', side_bet_amount: int = 0,
                  side_bet_type: str = '') -> None:
-        """
-        Main bet function. It takes the upper and lower number for bet. Upper and lower number must be in the range
-        [0,99]. The difference between upper and lower can be in the range of [0,95].
-
-        :param upper: Upper number user can bet. It must be in the range [0,99]
-        :type upper: int
-        :param lower: Lower number user can bet. It must be in the range [0,99]
-        :type lower: int
-        :param user_seed: 'Lucky phrase' provided by user, defaults to ""
-        :type user_seed: str,optional
-        :param side_bet_amount: Amount to be used for side bet from value sent to this function, defaults to 0
-        :type side_bet_amount: int,optional
-        :param side_bet_type: side bet types can be one of this ["digits_match", "icon_logo1","icon_logo2"], defaults to
-         ""
-        :type side_bet_type: str,optional
-        """
         return self.__bet(upper, lower, user_seed, side_bet_amount, side_bet_type)
 
     def __bet(self, upper: int, lower: int, user_seed: str, side_bet_amount: int, side_bet_type: str) -> None:
@@ -161,16 +149,6 @@ class Dice(IconScoreBase):
 
     # check for bet limits and side limits
     def check_side_bet_win(self, side_bet_type: str, winning_number: int) -> bool:
-        """
-        Checks the conditions for side bets are matched or not.
-        :param side_bet_type: side bet types can be one of this ["digits_match", "icon_logo1","icon_logo2"], defaults to
-         ""
-        :type side_bet_type: str,optional
-        :param winning_number: winning number returned by random function
-        :type winning_number: int
-        :return: Returns true or false based on the side bet type and the winning number
-        :rtype: bool
-        """
         if side_bet_type == SIDE_BET_TYPES[0]:  # digits_match
             return winning_number % 11 == 0
         if side_bet_type == SIDE_BET_TYPES[1]:  # for icon logo1 ie for numbers having 1 zero in it
