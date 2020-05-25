@@ -23,10 +23,6 @@ SIDE_BET_MULTIPLIERS = {"digits_match": 9.5, "icon_logo1": 5, "icon_logo2": 95}
 BET_LIMIT_RATIOS_SIDE_BET = {"digits_match": 1140, "icon_logo1": 540, "icon_logo2": 12548}
 MINIMUM_TREASURY = 250
 
-
-
-
-
 class Dice(IconScoreBase):
     _GAME_ON = "game_on"
 
@@ -69,11 +65,6 @@ class Dice(IconScoreBase):
     @external(readonly=True)
     def get_game_status(self) -> bool:
         return self._game_on.get()
-
-    @external(readonly=True)
-    def get_side_bet_multipliers(self) -> dict:
-        return SIDE_BET_MULTIPLIERS
-
 
     def get_random(self, user_seed: str = '') -> float:
         seed = (str(bytes.hex(self.tx.hash)) + str(self.now()) + user_seed)
