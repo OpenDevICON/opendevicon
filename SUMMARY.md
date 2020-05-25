@@ -3,19 +3,19 @@
 * [Welcome](README.md)
 
 ## GETTING STARTED
-* [Prerequisites](docs/prerequisites.md)
-* [Sample SCORE](docs/sampleScore.md)
-  * [SCORE methods](docs/scoreMethods.md)
+
+* [Prerequisites](getting-started/prerequisites.md)
+* [Sample SCORE](getting-started/samplescore/README.md)
+  * [SCORE methods](getting-started/samplescore/score-methods.md)
 
 ## Jupyter Notebook
 
-* [SCORE Deployment](scoreDeploy.md)
-* [Calling SCORE Methods](callScoreMethods.md)
-* [ICX Transfer](icxTransfer.md)
+* [SCORE Deployment](jupyter-notebook/score-deployment.md)
+* [Calling SCORE Methods](jupyter-notebook/calling-score-methods.md)
+* [ICX Transfer](jupyter-notebook/icx-transfer.md)
 
 ## SCORE library
-* [Deck module](scoreDeploy.md)
-* [Random function generation](scoreDeploy.md)
 
-
+* [Deck module](score-library/deck-module.md)
+* [Random function generation](score-library/random-function-generation.md)
 
