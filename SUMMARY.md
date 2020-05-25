@@ -5,7 +5,7 @@
 ## GETTING STARTED
 * [Prerequisites](docs/prerequisites.md)
 * [Sample SCORE](docs/sampleScore.md)
-  * [SCORE methods](docs/scoreMethods.md)
+  * [SCORE Methods](docs/scoreMethods.md)
 
 ## Jupyter Notebook
 

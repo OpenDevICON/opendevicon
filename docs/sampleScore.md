@@ -8,6 +8,7 @@ You can access the project folder from [github](https://github.com/kailehok/open
 ## Dice SCORE
 The following is the code snippet for the dice SCORE:-
 
+<pre style = "overflow-x: scroll"> 
 ```py
 # %load dice/dice.py
 from iconservice import *
@@ -161,3 +162,4 @@ class Dice(IconScoreBase):
         if self.msg.sender != self.owner:
             revert("Treasury can only be filled by the SCORE owner")
 ```
+</pre>
