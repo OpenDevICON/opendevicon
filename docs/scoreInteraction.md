@@ -17,7 +17,9 @@ $ cd opendevicon
 $ jupyter-notebook
 ```
 Now you can see a Jupyter instance running in your browser
+
 ![](../assets/check.png)
 
 Click on **SCORE.ipnyb** file which will be our main Jupyter Notebook file
-![](../assets/check2.png)
+
+![](../assets/.png)
