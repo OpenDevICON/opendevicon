@@ -2,6 +2,7 @@
 
 Before showing the usage of PythonSDK in Jupyter Notebook, we will require a SCORE to be interacted with. For this documentation we choose to use one of the SCORE having highest number of transactions in ICON blockchain ie Dice SCORE of [ICONbet](https://iconbet.io/).
 
+
 ## Dice SCORE
 ```py
 # %load dice/dice.py
@@ -16,27 +17,18 @@ BET_MIN = 1000000000000000
 SIDE_BET_TYPES = ["digits_match", "icon_logo1", "icon_logo2"]
 SIDE_BET_MULTIPLIERS = {"digits_match": 9.5, "icon_logo1": 5, "icon_logo2": 95}
 BET_LIMIT_RATIOS_SIDE_BET = {"digits_match": 1140, "icon_logo1": 540, "icon_logo2": 12548}
+MINIMUM_TREASURY = 250000
 
 
-# An interface to treasury score
-class TreasuryInterface(InterfaceScore):
-    @interface
-    def get_treasury_min(self) -> int:
-        pass
 
-    @interface
-    def request_payout(self, _payout: int) -> None:
-        pass
 
 
 class Dice(IconScoreBase):
     _GAME_ON = "game_on"
-    _TREASURY_SCORE = 'treasury_score'
 
     def __init__(self, db: IconScoreDatabase) -> None:
         super().__init__(db)
         self._game_on = VarDB(self._GAME_ON, db, value_type=bool)
-        self._treasury_score = VarDB(self._TREASURY_SCORE, db, value_type=Address)
 
     @eventlog(indexed=2)
     def BetSource(self, _from: Address, timestamp: int):
@@ -61,14 +53,6 @@ class Dice(IconScoreBase):
     def on_update(self) -> None:
         super().on_update()
 
-    @external
-    def set_treasury_score(self, _score: Address) -> None:
-        if self.msg.sender == self.owner:
-            self._treasury_score.set(_score)
-
-    @external(readonly=True)
-    def get_treasury_score(self) -> Address:
-        return self._treasury_score.get()
 
     @external
     def toggle_game_status(self) -> None:
@@ -120,10 +104,7 @@ class Dice(IconScoreBase):
         side_bet_payout = 0
         self.BetSource(self.tx.origin, self.tx.timestamp)
 
-        treasury_score = self.create_interface_score(self._treasury_score.get(), TreasuryInterface)
-        _treasury_min = treasury_score.get_treasury_min()
-        self.icx.transfer(self._treasury_score.get(), self.msg.value)
-        self.FundTransfer(self._treasury_score.get(), self.msg.value, "Sending icx to Treasury")
+        #condition checks
         if not self._game_on.get():
             revert(f'Game not active yet.')
         
@@ -139,22 +120,24 @@ class Dice(IconScoreBase):
             side_bet_set = True
             if side_bet_type not in SIDE_BET_TYPES:
                 revert(f'Invalid side bet type.')
-            side_bet_limit = _treasury_min // BET_LIMIT_RATIOS_SIDE_BET[side_bet_type]
+            side_bet_limit = MINIMUM_TREASURY // BET_LIMIT_RATIOS_SIDE_BET[side_bet_type]
             if side_bet_amount < BET_MIN or side_bet_amount > side_bet_limit:
                 revert(f'Betting amount {side_bet_amount} out of range ({BET_MIN} ,{side_bet_limit}).')
             side_bet_payout = int(SIDE_BET_MULTIPLIERS[side_bet_type] * 100) * side_bet_amount // 100
+
+
         main_bet_amount = self.msg.value - side_bet_amount
         gap = (upper - lower) + 1
         if main_bet_amount == 0:
             Logger.debug(f'No main bet amount provided', TAG)
             revert(f'No main bet amount provided')
 
-        main_bet_limit = (_treasury_min * 1.5 * gap) // (68134 - 681.34 * gap)
+        main_bet_limit = (MINIMUM_TREASURY * 1.5 * gap) // (68134 - 681.34 * gap)
         if main_bet_amount < BET_MIN or main_bet_amount > main_bet_limit:
             revert(f'Main Bet amount {main_bet_amount} out of range {BET_MIN},{main_bet_limit} ')
         main_bet_payout = int(MAIN_BET_MULTIPLIER * 100) * main_bet_amount // (100 * gap)
         payout = side_bet_payout + main_bet_payout
-        if self.icx.get_balance(self._treasury_score.get()) < payout:
+        if self.icx.get_balance(self.address) < payout:
             revert('Not enough in treasury to make the play.')
         spin = self.get_random(user_seed)
         winningNumber = int(spin * 100)
@@ -172,7 +155,7 @@ class Dice(IconScoreBase):
         self.PayoutAmount(payout, main_bet_payout, side_bet_payout)
         if main_bet_win or side_bet_win:
             try:
-                treasury_score.request_payout(payout)
+                self.icx.transfer(self.msg.sender,payout)
             except BaseException as e:
                 revert('Network problem. Winnings not sent. Returning funds.')
 
@@ -197,5 +180,6 @@ class Dice(IconScoreBase):
 
     @payable
     def fallback(self):
-        pass
+        if self.msg.sender != self.owner:
+            revert("Treasury can only be filled by the SCORE owner")
 ```
