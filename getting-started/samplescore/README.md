@@ -2,13 +2,12 @@
 
 Before showing the usage of PythonSDK in Jupyter Notebook, we will require a SCORE to be interacted with. For this documentation we choose to use one of the SCORE having highest number of transactions in ICON blockchain ie Dice SCORE of [ICONbet](https://iconbet.io/).
 
-Some changes have been made to the actual SCORE to make it easier for demonstration purpose. You can access the project folder from ****[**github**](https://github.com/kailehok/opendevicon/tree/master/dice).
+Some changes have been made to the actual SCORE to make it easier for demonstration purpose. You can access the project folder from [**github**](https://github.com/kailehok/opendevicon/tree/master/dice).
 
 ## Dice SCORE
 
 The following is the code snippet for the dice SCORE:-
 
-<pre style = "overflow-x: scroll"> 
 ```python
 # %load dice/dice.py
 from iconservice import *
@@ -162,8 +161,5 @@ class Dice(IconScoreBase):
         if self.msg.sender != self.owner:
             revert("Treasury can only be filled by the SCORE owner")
 ```
-<<<<<<< HEAD:docs/sampleScore.md
-</pre>
-=======
 
->>>>>>> e87f987348489f6860e4d3418d1e20d4e9cfa640:getting-started/samplescore/README.md
+
