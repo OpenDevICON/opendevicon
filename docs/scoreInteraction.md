@@ -22,4 +22,4 @@ Now you can see a Jupyter instance running in your browser
 
 Click on **SCORE.ipnyb** file which will be our main Jupyter Notebook file
 
-![](../assets/jupyterinside.png)
+![](../assets/check2.png)
