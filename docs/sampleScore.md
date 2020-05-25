@@ -3,7 +3,7 @@
 Before showing the usage of PythonSDK in Jupyter Notebook, we will require a SCORE to be interacted with. For this documentation we choose to use one of the SCORE having highest number of transactions in ICON blockchain ie Dice SCORE of [ICONbet](https://iconbet.io/).
 
 Some changes have been made to the actual SCORE to make it easier for demonstration purpose.
-You can access the project folder from [github](https://github.com/kailehok/opendevicon/tree/master/dice).
+You can access the project folder from [**github**](https://github.com/kailehok/opendevicon/tree/master/dice).
 
 ## Dice SCORE
 The following is the code snippet for the dice SCORE:-
