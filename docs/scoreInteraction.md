@@ -5,9 +5,7 @@ As a SCORE developer, using tbears for SCORE deploy,update process and making a 
 
 We have made a [**template**](https://github.com/kailehok/opendevicon/blob/master/SCORE.ipynb) and all you will have to do is update some parameters to the SDK and execute the cell to perform the operation. This makes us get rid of tbears cli commands hassle while interacting with SCORE.
 
-
-
-Let us now go to our main motive i.e use of Jupyter Notebook for interacting with the Dice SCORE. Before proceeding ahead make sure the [**prerequisites**](prerequisites.md) are already installed.
+ Before proceeding ahead make sure the [**prerequisites**](prerequisites.md) are already installed.
 
 ## Cloning the project 
 
