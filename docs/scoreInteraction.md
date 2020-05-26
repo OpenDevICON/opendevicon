@@ -107,7 +107,6 @@ Go to [**ibriz-faucet**](https://icon-faucet.ibriz.ai/) to receive test ICXs in 
 
 
 
-
 Now we are all set to use the SDK in Jupyter Notebook. You can get the official documentation of PythonSDK for ICON [**here**](https://www.icondev.io/docs/python-sdk). 
 
 

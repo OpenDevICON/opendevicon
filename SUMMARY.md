@@ -11,7 +11,7 @@
 
 * [SCORE Interaction](docs/scoreInteraction.md)
   * [SCORE Deployment](docs/scoreDeploy.md)
-  * [Calling SCORE Methods](docs/callscoreMethods.md)
+  * [Calling SCORE Methods](docs/callScoreMethods.md)
 * [ICX Transfer](docs/icxTransfer.md)
 
 ## SCORE library
