@@ -3,7 +3,7 @@
 ## Jupyter Notebook for ICON Environment
 As a SCORE developer, using tbears for SCORE deploy,update process and making a transaction call is a bit cumbersome. So to make the whole process smooth, SCORE can be handled with a Jupyter Notebook approach where we will be using Python SDK for each operation in different cell. 
 
-We have made a template and all you will have to do is update some parameters to the SDK and execute the cell to perform the operation. This makes us get rid of tbears cli commands hassle while interacting with SCORE.
+We have made a [**template**](https://github.com/kailehok/opendevicon/blob/master/SCORE.ipynb) and all you will have to do is update some parameters to the SDK and execute the cell to perform the operation. This makes us get rid of tbears cli commands hassle while interacting with SCORE.
 
 
 
@@ -67,7 +67,7 @@ $ pip install <package-name>
 {% endhint %}
 
 ### Setting up URL
-Create an [**IconService**] instance and set a provider. The [**HTTPProvider**] takes one of the following URL where the server can be found. For this documentation we will be using [**Yeouido**](https://bicon.tracker.solidwallet.io/) tesnet. 
+Create an **IconService** instance and set a provider. The **HTTPProvider** takes one of the following URL where the server can be found. For this documentation we will be using [**Yeouido**](https://bicon.tracker.solidwallet.io/) tesnet. 
 ```py
 # Mainnet
 # icon_service = IconService(HTTPProvider("https://ctz.solidwallet.io", 3))

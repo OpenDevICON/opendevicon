@@ -16,7 +16,7 @@
 
 ## SCORE library
 
-* [Deck module]
-* [Random function generation]
+* [Deck module]()
+* [Random function generation]()
 
 
