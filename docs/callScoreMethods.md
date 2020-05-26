@@ -1,5 +1,7 @@
 # Calling SCORE Methods
 
+This section provides an explanation about ways of executing various method types in different Jupyter Notebook cells.
+
 ## Readonly Method
 First we need to check the status of our game whether it's on or off.
 
