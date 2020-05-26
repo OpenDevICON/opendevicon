@@ -1,8 +1,8 @@
 # SCORE Deployment
 
-Our Dice SCORE is ready and we are going to deploy it in our testnet. Now compress the dice folder into **dice.zip**.
+We have Dice SCORE ready in the cloned repository. Now compress the dice folder to **dice.zip**.
 
- We will use **DeployTransactionBuilder()** to generate an instance of transaction for deploying the SCORE.
+We will use **DeployTransactionBuilder()** to generate an instance of transaction for deploying the SCORE.
 
 {% hint style="warning" %}
 Make sure you delete any tests folder inside your main project before compressing!
@@ -36,7 +36,7 @@ Save the **scoreAddress** of your deployed SCORE from the **tx_result** as you w
 
 
 ## Updating SCORE
-One of the main feature in ICON blockchain is that you can have your updated SCORE in the same SCORE address. Only you have to do is to set the **"to"** param to previous SCORE address rather than Governance address.
+One of the main feature in ICON blockchain is that you can have your SCORE updated in the same address. Only you have to do is to set the **"to"** param to previous SCORE address rather than Governance address.
 
 Make any change in the dice score and update the dice.zip file.
 
