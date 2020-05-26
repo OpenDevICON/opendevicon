@@ -30,7 +30,7 @@ Click on **SCORE.ipnyb** file which will be our main Jupyter Notebook file
 
 ![](../assets/check2.png)
 
-{% hint style="info"}
+{% hint style="info"%}
 If you are new to Jupyter Notebook, read the [**article**](https://www.codecademy.com/articles/how-to-use-jupyter-notebooks) to be familiar with usage of Jupyter Notebook
 {% endhint %}
 

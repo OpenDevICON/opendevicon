@@ -1,10 +1,10 @@
 # Calling SCORE Methods
 
 ## Readonly Method
-
 First we need to check the status of our game whether it's on or off.
 
 For that we have **get_game_status** method in our SCORE.
+
 Execute this cell using Ctrl + Enter in Jupyter Notebook.
 ```py
 _call = CallBuilder()\
@@ -16,17 +16,18 @@ response = icon_service.call(_call)
 print(response)
 ```
 {% hint style="info" %}
-**CallBuilder** doesn't send any transaction to the blockchain.
+**CallBuilder()** doesn't send any transaction to the blockchain.
 {% endhint %}
    
-If the response is **True** the game is on else it is turned off.
+If the response is **True**, the game is on else it is turned off.
 
 ## External Method
 If the game is off you need to change the game status to on before being able to play the game.
 
 For that we have **toggle_game_status** method in our SCORE.
+
 Execute this cell using Ctrl + Enter in Jupyter Notebook.
-{% hint style="warning"}
+{% hint style="warning"%}
 Your game will be turned off if it is already in on status.
 { %endhint% }
 ```py
@@ -57,7 +58,7 @@ def get_tx_result(_tx_hash):
 get_tx_result(tx_hash)
 ```
 
-If the status is **1**, your transaction succeeded.
+If the status is **"1"**, your transaction succeeded. You can copy the **tx_hash** and see your transaction in the [**tracker**](https://bicon.tracker.solidwallet.io/).
 
 ## Payable Method
   Before being able to play the game ,one more thing you need to do is to fill some ICX in Dice SCORE for treasury.
