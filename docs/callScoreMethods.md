@@ -27,9 +27,9 @@ If the game is off you need to change the game status to on before being able to
 For that we have **toggle_game_status** method in our SCORE.
 
 Execute this cell using Ctrl + Enter in Jupyter Notebook.
-{% hint style="warning"%}
+{% hint style="warning" %}
 Your game will be turned off if it is already in on status.
-{ %endhint% }
+{% endhint %}
 ```py
 call_transaction = CallTransactionBuilder()\
     .from_(deployer_wallet.get_address())\
