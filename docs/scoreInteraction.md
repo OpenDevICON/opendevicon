@@ -1,7 +1,9 @@
 # SCORE Interaction
 
 ## Jupyter Notebook for ICON Environment
-As a SCORE developer, SCORE deploy,update process and making a transaction call using tbears is a bit cumbersome. So to make the whole process smooth we will be handling our SCORE with a Jupyter Notebook approach where we will be using Python SDK for each operation in different cell. We will have our template in place and all we will have to do is update some parameters to the SDK and execute the cell to perform the operation. This makes us get rid of tbears cli commands hassle while interacting with SCORE.
+As a SCORE developer, using tbears for SCORE deploy,update process and making a transaction call is a bit cumbersome. So to make the whole process smooth, SCORE can be handled with a Jupyter Notebook approach where we will be using Python SDK for each operation in different cell. 
+
+We have made a template and all you will have to do is update some parameters to the SDK and execute the cell to perform the operation. This makes us get rid of tbears cli commands hassle while interacting with SCORE.
 
 
 
@@ -91,7 +93,7 @@ NID = 3
 # NID = 80
 ```
 
-### Create wallets
+### Creating wallets
 We will create two wallets, one for deploying SCORE and other for placing bet.
 ```py
 deployer_wallet = KeyWallet.create() 

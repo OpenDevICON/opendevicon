@@ -3,6 +3,7 @@
 Our Dice SCORE is ready and we are going to deploy it in our testnet. Now compress the dice folder into **dice.zip**.
 
  We will use **DeployTransactionBuilder()** to generate an instance of transaction for deploying the SCORE.
+ 
 { % hint style="warning" %}
 Make sure you delete any tests folder inside your main project before compressing!
 { % endhint %}

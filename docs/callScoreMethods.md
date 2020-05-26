@@ -28,7 +28,7 @@ For that we have **toggle_game_status** method in our SCORE.
 
 Execute this cell using Ctrl + Enter in Jupyter Notebook.
 {% hint style="warning" %}
-Your game will be turned off if it is already in on status.
+Your game will be turned off if it is already in **"on"** status.
 {% endhint %}
 ```py
 call_transaction = CallTransactionBuilder()\
