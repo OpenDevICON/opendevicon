@@ -4,7 +4,7 @@ Welcome to the technical documentation site for the OpenDevICON project!
 In this documentation you’ll find information on:
 
 - An overview of OpendevICON
-- Tutorials to get you started with [**Python SDK**](docs/docs/prerequisites.md) and [**Jupyter Notebook**](docs/scoreInteraction.md)
+- Tutorials to get you started with [**Python SDK**](docs/prerequisites.md) and [**Jupyter Notebook**](docs/scoreInteraction.md)
 - Reference to [**SCORE library**](docs/deck.md)
 
 ## About OpenDevICON
