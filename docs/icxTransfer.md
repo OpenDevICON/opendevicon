@@ -14,9 +14,9 @@ Execute the cell using Ctrl + Enter to transfer ICX to Dice SCORE.
 transaction = TransactionBuilder()\
     .from_(deployer_wallet.get_address())\
     .to(<YOUR_SCORE_ADDRESS>)\
-    .nid(NID) \
-    .nonce(100) \
-    .value(99*10**18)\
+    .nid(NID)\
+    .nonce(100)\
+    .value(50*10**18)\
     .build()
 
 estimate_step = icon_service.estimate_step(transaction)

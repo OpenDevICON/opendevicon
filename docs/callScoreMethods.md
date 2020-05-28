@@ -35,10 +35,10 @@ Your game will be turned off if it is already in **"on"** status.
 ```py
 call_transaction = CallTransactionBuilder()\
     .from_(deployer_wallet.get_address())\
-    .to(SCORE_ADDRESS) \
-    .nid(NID) \
-    .nonce(100) \
-    .method("game_on")\
+    .to(<YOUR_SCORE_ADDRESS>)\
+    .nid(NID)\
+    .nonce(100)\
+    .method("toggle_game_status")\
     .build()
 
 estimate_step = icon_service.estimate_step(call_transaction)
@@ -62,6 +62,8 @@ get_tx_result(tx_hash)
 
 If the status is **"1"**, your transaction succeeded. You can copy the **tx_hash** and see your transaction in the [**tracker**](https://bicon.tracker.solidwallet.io/).
 
+Now you can also execute above readonly cell to see change in result.
+
 ## Payable Method
   Before being able to play the game ,one more thing you need to do is to fill some ICX in Dice SCORE for treasury.
  For that goto section [**ICX Transfer**](icxTransfer.md)
@@ -81,18 +83,18 @@ params={
 
 call_transaction = CallTransactionBuilder()\
     .from_(caller_wallet.get_address())\
-    .to(<YOUR_SCORE_ADDRESS>) \
-    .nid(NID) \
-    .nonce(100) \
-    .value(10**18)
+    .to(<YOUR_SCORE_ADDRESS>)\
+    .nid(NID)\
+    .nonce(100)\
+    .value(10**18)\
     .method("call_bet")\
-    .params(params)
+    .params(params)\
     .build()
 
 estimate_step = icon_service.estimate_step(call_transaction)
 step_limit = estimate_step + 100000
 # Returns the signed transaction object having a signature
-signed_transaction = SignedTransaction(call_transaction, deployer_wallet,step_limit)
+signed_transaction = SignedTransaction(call_transaction, caller_wallet,step_limit)
 
 # Reads params to transfer to nodes
 print(signed_transaction.signed_transaction_dict)

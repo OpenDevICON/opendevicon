@@ -10,7 +10,7 @@ BET_MIN = 1000000000000000
 SIDE_BET_TYPES = ["digits_match", "icon_logo1", "icon_logo2"]
 SIDE_BET_MULTIPLIERS = {"digits_match": 9.5, "icon_logo1": 5, "icon_logo2": 95}
 BET_LIMIT_RATIOS_SIDE_BET = {"digits_match": 1140, "icon_logo1": 540, "icon_logo2": 12548}
-MINIMUM_TREASURY = 250
+MINIMUM_TREASURY = 250000
 
 class Dice(IconScoreBase):
     _GAME_ON = "game_on"
@@ -28,7 +28,7 @@ class Dice(IconScoreBase):
         pass
 
     @eventlog(indexed=3)
-    def BetResult(self, spin: str, winningNumber: int, payout: int):
+    def BetResult(self, winningNumber: int,result: str, payout: int):
         pass
 
     @eventlog(indexed=2)
@@ -88,7 +88,9 @@ class Dice(IconScoreBase):
             side_bet_set = True
             if side_bet_type not in SIDE_BET_TYPES:
                 revert(f'Invalid side bet type.')
-            side_bet_limit = MINIMUM_TREASURY // BET_LIMIT_RATIOS_SIDE_BET[side_bet_type]
+            # side_bet_limit = MINIMUM_TREASURY // BET_LIMIT_RATIOS_SIDE_BET[side_bet_type]
+            # Changed the bet limit to consider our small treasury
+            side_bet_limit = 10*10**18
             if side_bet_amount < BET_MIN or side_bet_amount > side_bet_limit:
                 revert(f'Betting amount {side_bet_amount} out of range ({BET_MIN} ,{side_bet_limit}).')
             side_bet_payout = int(SIDE_BET_MULTIPLIERS[side_bet_type] * 100) * side_bet_amount // 100
@@ -100,7 +102,9 @@ class Dice(IconScoreBase):
             Logger.debug(f'No main bet amount provided', TAG)
             revert(f'No main bet amount provided')
 
-        main_bet_limit = (MINIMUM_TREASURY * 1.5 * gap) // (68134 - 681.34 * gap)
+        # main_bet_limit = (MINIMUM_TREASURY * 1.5 * gap) // (68134 - 681.34 * gap)
+        # Changed the bet limit to consider our small treasury
+        main_bet_limit = 10*10**18
         if main_bet_amount < BET_MIN or main_bet_amount > main_bet_limit:
             revert(f'Main Bet amount {main_bet_amount} out of range {BET_MIN},{main_bet_limit} ')
         main_bet_payout = int(MAIN_BET_MULTIPLIER * 100) * main_bet_amount // (100 * gap)
@@ -119,7 +123,17 @@ class Dice(IconScoreBase):
                 side_bet_payout = 0
         main_bet_payout = main_bet_payout * main_bet_win
         payout = main_bet_payout + side_bet_payout
-        self.BetResult(str(spin), winningNumber, payout)
+        result = ""
+        if main_bet_payout>0:
+            result="Main bet win"
+        else:
+            result="Main bet lose"
+        if side_bet_amount>0 and side_bet_payout>0:
+            result+=" Side bet win"
+        elif side_bet_amount>0 :
+            result+=" Side bet lose"
+        
+        self.BetResult( winningNumber, result,payout)
         self.PayoutAmount(payout, main_bet_payout, side_bet_payout)
         if main_bet_win or side_bet_win:
             try:
