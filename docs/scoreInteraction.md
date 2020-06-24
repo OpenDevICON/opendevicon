@@ -3,13 +3,13 @@
 ## Jupyter Notebook for ICON Environment
 As a SCORE developer, using tbears for SCORE deploy,update process and making a transaction call is a bit cumbersome. So to make the whole process smooth, SCORE can be handled with a Jupyter Notebook approach where we will be using Python SDK for each operation in different cell. 
 
-We have made a [**template**](https://github.com/kailehok/opendevicon/blob/master/SCORE.ipynb) and all you will have to do is update some parameters to the SDK and execute the cell to perform the operation. This makes us get rid of tbears cli commands hassle while interacting with SCORE.
+We have made a [**template**](https://github.com/OpenDevICON/opendevicon/blob/development/SCORE.ipynb) and all you will have to do is update some parameters to the SDK and execute the cell to perform the operation. This makes us get rid of tbears cli commands hassle while interacting with SCORE.
 
  Before proceeding ahead make sure the [**prerequisites**](prerequisites.md) are already installed.
 
 ## Cloning the project 
 
-You can get the project repo from [**Github**](https://github.com/kailehok/opendevicon)
+You can get the project repo from [**Github**](https://github.com/OpenDevICON/opendevicon/)
 
 ![](../assets/github.png)
 
