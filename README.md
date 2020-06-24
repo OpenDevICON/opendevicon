@@ -8,7 +8,7 @@ In this documentation you’ll find information on:
 - Reference to [**SCORE library**](docs/deck.md)
 
 ## About OpenDevICON
-**OpenDevICON** is an accelerator program to accelerate the training of ICON developers and reduce friction and wasted time in development of ICON SCOREs, dApps and DAOs.
+**OpenDevICON** is an initiative to accelerate the training of ICON developers and reduce friction and wasted time in development of ICON SCOREs, dApps and DAOs.
 
 The vision behind this project is to build a resource and reference hub with tools, tutorials, articles on best practices, and reusable code. Our developer hub will provide secure, audited, and reusable open source SCORE code along with tools that we have developed over the last 21 months of working on ICON that accelerate the deployment and management of ICON smart contracts.
 
