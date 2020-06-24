@@ -15,7 +15,7 @@ You can get the project repo from [**Github**](https://github.com/OpenDevICON/op
 
 Run command:-
 ```p![](../assets/github.png)y
-$ git clone https://github.com/kailehok/opendevicon.git
+$ git clone https://github.com/OpenDevICON/opendevicon.git
 ```
 Open Jupyter Notebook file using command:-
 ```py
