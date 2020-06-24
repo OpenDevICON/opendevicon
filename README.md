@@ -8,11 +8,8 @@ In this documentation you’ll find information on:
 - Reference to [**SCORE library**](docs/deck.md)
 
 ## About OpenDevICON
-**OpenDevICON** is an initiative to accelerate the training of ICON developers and reduce friction and wasted time in development of ICON SCOREs, dApps and DAOs.
-
-The vision behind this project is to build a resource and reference hub with tools, tutorials, articles on best practices, and reusable code. Our developer hub will provide secure, audited, and reusable open source SCORE code along with tools that we have developed over the last 21 months of working on ICON that accelerate the deployment and management of ICON smart contracts.
-
-The project will be launched on 5 phases as in the roadmap. The first phase will give an overview to the best practices in score development with the Jupyter Notebook approach. Other phases will continue eventually after the completion of the first phase.
+**OpenDevICON** is an initiative to support ICON developers by reducing friction and wasted time in development of ICON SCOREs, dApps and DAOs.
+The vision for this project is to build a resource and reference hub with tools, tutorials, articles on best practices, and reusable code. As a developer hub, it will provide secure, audited, and reusable open source SCORE code along with tools to help the deployment and management of ICON smart contracts.
 
 ## Current Status
 OpenDevICON is currently at the starting phase and we believe it to make a good impact as we move forward. While we plan to continue this for long term growth of ICON, we are very pleased to have support from the foundation and ICON community. With OpenDevICON we hope to continue bringing more people and ideas to this platform. While it is certainly going to take some time, our project will help us reach our goal to the earliest possible. 
