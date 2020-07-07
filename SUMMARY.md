@@ -18,6 +18,6 @@
 
 * [Deck module](docs/deck.md)
 * [Random function generation](docs/random.md)
-* [Check]
+* [Check](docs/deck.md)
 
 
