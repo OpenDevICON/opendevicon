@@ -1,4 +1,4 @@
-# SCORE Interaction
+# SCORE Interaction check
 
 ## Jupyter Notebook for ICON Environment
 As a SCORE developer, using tbears for SCORE deploy,update process and making a transaction call is a bit cumbersome. So to make the whole process smooth, SCORE can be handled with a Jupyter Notebook approach where we will be using Python SDK for each operation in different cell. 
