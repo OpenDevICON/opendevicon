@@ -15,9 +15,14 @@
 * [ICX Transfer](docs/icxTransfer.md)
 
 ## SCORE library
-
+* [IRC2 Token](docs/IRC2.md)
+	* [IRC2 Mintable](docs/IRC2Mintable.md)
+	* [IRC2 Burnable](docs/IRC2Burnable.md)
+	* [IRC2 Capped](docs/IRC2Capped.md)
+	* [IRC2 Pausable](docs/IRC2Pausable.md)
+	* [IRC2 Snapshot](docs/IRC2Snapshot.md)
 * [Deck module](docs/deck.md)
 * [Random function generation](docs/random.md)
-* [Check](docs/deck.md)
+
 
 
