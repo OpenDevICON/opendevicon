@@ -5,8 +5,8 @@ A token is a representation of something in blockchain. This something can be mo
 IRC2 token is a standard token equivalent to [ERC20]() for [ICON](https://icon.foundation/?lang=en) blockchain. It helps to keep track of [fungible](https://en.wikipedia.org/wiki/Fungibility) tokens. 
 
 There are a few core contracts to implement IRC2 token.
-* IIRC2: Interface IRC2 methods should confirm into.
-* IRC2: The base implementation of IRC2 contract.
+* [IIRC2](): Interface IRC2 methods should confirm into.
+* [IRC2](docs/IRC2.md): The base implementation of IRC2 contract.
 
 There are multiple other extensions.
 * [IRC2Mintable](docs/IRC2Mintable.md): To create token supply.
