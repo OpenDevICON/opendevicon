@@ -71,8 +71,8 @@ def _snapshot(self) -> None:
 ```
 
 #### \_transfer
-```Python
 Changes the account snapshot after transfer operation.
+```Python
 def _transfer(self, _from: Address, _to: Address, _value: int, _data) -> None:
 ```
 
