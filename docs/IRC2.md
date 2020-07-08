@@ -121,5 +121,19 @@ Called before transfer of tokens to check if it is valid. If `_from` and `_to` a
 def _beforeTokenTransfer(self, _from: Address, _to: Address,_value: int) -> None:
 ```
 
+## Exceptions
+
+####InsufficientBalanceError
+Raised when the sender has less balance than the value to be transferred during transfer operation.
+
+####ZeroValueError
+Raised when 0 tokens is to be transferred, minted or burned.
+
+####InvalidNameError
+Raised when the length of the `_tokenName` and `_symbolName` of the token is 0.
+
+####OverCapLimit
+Raised when total supply exceeds the cap limit.
+
 ## Implementation
 * [IRC2 Token](https://github.com/OpenDevICON/odi-contracts/blob/test-fixed/ODIContracts/tokens/IRC2.py "IRC2")
