@@ -15,7 +15,8 @@
 * [ICX Transfer](docs/icxTransfer.md)
 
 ## SCORE library
-*[IRC2 Standard](docs/IRC2Standard.md)
+
+* [IRC2 Standard](docs/IRC2Standard.md)
 	* [IRC2 Token](docs/IRC2.md)
 	* [IRC2 Mintable](docs/IRC2Mintable.md)
 	* [IRC2 Burnable](docs/IRC2Burnable.md)
