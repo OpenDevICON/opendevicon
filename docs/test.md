@@ -1,6 +1,6 @@
 # Creating your own IRC2 token
 
--> First git clone this that and all that shit.
+-> First git clone the repo.
 
 ## Make changes in token.py
 
