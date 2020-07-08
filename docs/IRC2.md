@@ -120,3 +120,6 @@ Called before transfer of tokens to check if it is valid. If `_from` and `_to` a
 ```Python
 def _beforeTokenTransfer(self, _from: Address, _to: Address,_value: int) -> None:
 ```
+
+## Implementation
+* [IRC2 Token](https://github.com/OpenDevICON/odi-contracts/blob/test-fixed/ODIContracts/tokens/IRC2.py "IRC2")
