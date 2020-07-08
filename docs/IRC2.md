@@ -67,7 +67,7 @@ def increaseAllowance(self, spender: Address, value: int) -> bool:
 Decreases the allowance granted to `spender` by `value` amount. Returns a boolean value if the operation was successful.
 ```Python
 @external
-(self, spender: Address, value: int) -> bool:
+def decreaseAllowance(self, spender: Address, value: int) -> bool:
 ```
 
 ## Eventlogs
