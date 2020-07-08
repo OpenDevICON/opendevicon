@@ -3,38 +3,23 @@ IRC2 Mintable tokens are IRC2-compatible tokens with one added feature: new toke
 
 New tokens can be minted only by owner of the contract which is set when the SCORE is first deployed or updated.
 
-____
-
-
 ## Methods
 
-<<<<<<< HEAD
 ####mint
 Creates `_amount` number of tokens, and assigns to caller account. Increases the balance of that account and total supply. Only owner of SCORE can call this method.
 ```Python
-=======
-#### mint: 
-Creates `_amount` number of tokens, and assigns to caller account. Increases the balance of that account and total supply. Only owner of SCORE can call this method.
-```
->>>>>>> 75d8caa8ee06cc9acf2101208e5421ef5fe8f7ec
 @external
 def mint(self, _amount: int) -> None:
 ```
 <hr>
 
-<<<<<<< HEAD
 ####mintTo 
-=======
-#### mintTo: 
->>>>>>> 75d8caa8ee06cc9acf2101208e5421ef5fe8f7ec
 Creates `_amount` number of tokens, and assigns to `_account`. Increases the balance of `_account` and total supply. Only owner of SCORE can call this method.
 
 ```Python
 @external
 def mintTo(self, _account: Address, _amount: int) -> None:
 ```
-
----
 
 ## Implementation
 * [IRC2Mintable Token](https://github.com/OpenDevICON/odi-contracts/blob/test-fixed/ODIContracts/tokens/IRC2mintable.py "IRC2Mintable")
