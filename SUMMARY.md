@@ -23,6 +23,7 @@
 	* [IRC2 Capped](docs/IRC2Capped.md)
 	* [IRC2 Pausable](docs/IRC2Pausable.md)
 	* [IRC2 Snapshot](docs/IRC2Snapshot.md)
+* [Create Your Own Token](docs/test.md)
 * [Deck module](docs/deck.md)
 * [Random function generation](docs/random.md)
 
