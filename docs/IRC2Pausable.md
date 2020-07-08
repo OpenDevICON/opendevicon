@@ -5,6 +5,9 @@ Only owner of SCORE can pause and unpause token transfers. When paused, no token
 
 > Note: When the tokens are paused, token transfers are NOT suspended for later. Token transfers simply cannot proceed.
 
+{% hint style="warning" %}
+Note: When the tokens are paused, token transfers are NOT suspended for later. Token transfers simply cannot proceed.
+{% endhint %}
 ---
 
 ## Methods
