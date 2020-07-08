@@ -51,6 +51,17 @@ def Unpaused(self, by:Address):
 ```
 ---
 
+## Internal Functions
+#### _beforeTokenTransfer
+Checks if the SCORE is is paused state before transferring tokens.
+```Python
+def _beforeTokenTransfer(self, _from:Address, _to:Address, _value:int) -> None:
+```
+
+---
+
+
+
 ## Exceptions
 
 #### AlreadyPausedException:
