@@ -13,6 +13,7 @@
   * [SCORE Deployment](docs/scoreDeploy.md)
   * [Calling SCORE Methods](docs/callScoreMethods.md)
 * [ICX Transfer](docs/icxTransfer.md)
+* [Create Your Own Token](docs/test.md)
 
 ## SCORE library
 
