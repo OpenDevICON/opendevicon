@@ -1,4 +1,4 @@
-# Creating your own IRC2 token
+## Create your own IRC2 token
 
 **First git clone the repo.**
 
@@ -16,11 +16,11 @@ class SampleToken(IRC2):
 
 **[Install requirements](docs/prerequisites.md)**
 
-## Now open jupyter notebook
+### Now open jupyter notebook
 
 **Read [SCORE Interaction](docs/scoreInteraction.md) first**
 
-## Setting up environment
+### Setting up environment
 Before we move on to using the SDK we first need to initialize our environment.
 ### Importing packages
 All the necessary packages required for using SDK must be imported.
@@ -131,7 +131,7 @@ Save the **scoreAddress** of your deployed SCORE from the **tx_result** as you w
 SCORE_ADDRESS = "<score_address_obtained_after_deploying_the_contract>"
 ```
 
-## Updating SCORE
+### Updating SCORE
 ```Python
 UPDATE_PARAMS =  {
             "_tokenName": "TestToken1",
@@ -223,7 +223,7 @@ def get_tx_result(_tx_hash):
 
 get_tx_result(tx_hash)
 ```
-_Now reexecute the block to check the balance of deployer and random address. 5 tokens will be transferred to the random address from deployer address._
+Now reexecute the block to check the balance of deployer and random address. 5 tokens will be transferred to the random address from deployer address.
 
 ## To implement mintable and burnable tokens
 
