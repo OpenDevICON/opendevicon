@@ -2,7 +2,7 @@
 
 **First git clone the repo.**
 
-## Make changes in token.py
+### Make changes in token.py
 
 ```Python
 from iconservice import *
@@ -177,6 +177,8 @@ for method in external_methods:
                     .build()
     print(icon_service.call(call))
 ``` 
+You have successfully created a token!
+
 ### Check the total number of tokens of random and deployer address
 ```Python
 external_methods = [deployer_wallet.get_address(), random_wallet.get_address()]
@@ -191,6 +193,7 @@ for address in external_methods:
 *Note the balance of deployer and random address*
 
 ### Transfer of tokens
+Now, we transfer the tokens from the deployer to the ransom address.
 ```Python
 params={
     "_to": random_wallet.get_address(),
@@ -222,10 +225,11 @@ get_tx_result(tx_hash)
 ```
 _Now reexecute the block to check the balance of deployer and random address. 5 tokens will be transferred to the random address from deployer address._
 
-<!-- 
-## Now, To implement mintable and burnable
+## Now, to implement mintable and burnable tokens
 
-_Change token.py to this to implement burnable and mintable_
+Change token.py to implement IRC2burnable and IRC2mintable.<br>
+IRC2 Mintable and IRC2 Burnable inherits from IRC2. 
+
 ```Python
 from iconservice import *
 from .tokens.IRC2burnable import IRC2Burnable
@@ -233,28 +237,31 @@ from .tokens.IRC2mintable import IRC2Mintable
 
 TAG = 'SampleToken'
 
-class SampleToken(IRC2Mintable, IRC2Burnable):
+class SampleToken(IRC2Pausable, IRC2Mintable):
     pass
 ```
 
-**Reexecute blocks 1 to 8**
+Now, since we changed the token, we need to update the contract. Execute the block to update the contract again without making change to other blocks.
 
-### Testing mint method
-_Calling mint methods_
+### Testing minting of tokens
 ```Python
-params = {'_value':100000}
-mint_transaction = CallTransactionBuilder()\
-    .from_(operator.get_address())\
+params={
+    "_amount": 5,
+}
+
+call_transaction = CallTransactionBuilder()\
+    .from_(deployer_wallet.get_address())\
     .to(SCORE_ADDRESS)\
     .nid(3)\
     .nonce(100)\
-    .method('mint')\
+    .method("mint")\
     .params(params)\
     .build()
 
-estimate_step = icon_service.estimate_step(mint_transaction)
+
+estimate_step = icon_service.estimate_step(call_transaction)
 step_limit = estimate_step + 100000
-signed_transaction = SignedTransaction(mint_transaction, operator, step_limit)
+signed_transaction = SignedTransaction(call_transaction, deployer_wallet, step_limit)
 
 tx_hash = icon_service.send_transaction(signed_transaction)
 
@@ -265,26 +272,30 @@ def get_tx_result(_tx_hash):
 
 get_tx_result(tx_hash)
 ```
-**Now reexecute blocks to check the total supply and balance again**
-100000 tokens are added to total_supply.
-100000 tokens are added to the balance of operator address.
+After this block finishes executing, now reexecute the block to check the total supply and deployer balance. 5 tokens are added to total supply as well as the deployer address. 
 
 ### Testing mintTo method
 
+Using this method, tokens can be minted to other address as well. However, only the deployer can call this method.
 ```Python
-params = {'_account':RANDOM_ADDRESS,'_value':100000}
-mintTo_transaction = CallTransactionBuilder()\
-    .from_(operator.get_address())\
+params={
+    "_account": random_wallet.get_address(),
+    "_amount": 5,
+}
+
+call_transaction = CallTransactionBuilder()\
+    .from_(deployer_wallet.get_address())\
     .to(SCORE_ADDRESS)\
     .nid(3)\
     .nonce(100)\
-    .method('mint')\
+    .method("mintTo")\
     .params(params)\
     .build()
 
-estimate_step = icon_service.estimate_step(mintTo_transaction)
+
+estimate_step = icon_service.estimate_step(call_transaction)
 step_limit = estimate_step + 100000
-signed_transaction = SignedTransaction(mintTo_transaction, operator, step_limit)
+signed_transaction = SignedTransaction(call_transaction, deployer_wallet, step_limit)
 
 tx_hash = icon_service.send_transaction(signed_transaction)
 
@@ -295,25 +306,28 @@ def get_tx_result(_tx_hash):
 
 get_tx_result(tx_hash)
 ```
-**Now reexecute blocks to check the total supply and balance of random address again**
-100000 tokens are added to total_supply.
-100000 tokens is added to the balance of RANDOM_ADDRESS.
+After this block finishes executing, now reexecute the block to check the total supply and random address balance. 5 tokens are added to total supply as well as the random address.  
 
 ### Testing burn method
+
 ```Python
-params = {'_amount':100000}
-burn_transaction = CallTransactionBuilder()\
-    .from_(operator.get_address())\
+params={
+    "_amount": 5,
+}
+
+call_transaction = CallTransactionBuilder()\
+    .from_(deployer_wallet.get_address())\
     .to(SCORE_ADDRESS)\
     .nid(3)\
     .nonce(100)\
-    .method('burn')\
+    .method("burn")\
     .params(params)\
     .build()
 
-estimate_step = icon_service.estimate_step(burn_transaction)
+
+estimate_step = icon_service.estimate_step(call_transaction)
 step_limit = estimate_step + 100000
-signed_transaction = SignedTransaction(burn_transaction, operator, step_limit)
+signed_transaction = SignedTransaction(call_transaction, deployer_wallet, step_limit)
 
 tx_hash = icon_service.send_transaction(signed_transaction)
 
@@ -324,25 +338,29 @@ def get_tx_result(_tx_hash):
 
 get_tx_result(tx_hash)
 ```
-**Now reexecute blocks to check the total supply and balance again**
-100000 tokens are destroyed from the total_supply.
-100000 tokens are destroyed from the operator address.
+After this block finishes executing, now reexecute the block to check the total supply and deployer balance. 5 tokens is subtracted from total supply as well as from the deployer address. 
 
-###Testing burnFrom method
+### Testing mintTo method
+Using this method, tokens can be destroyed from other address as well. However, only the deployer can call this method.
 ```Python
-params = {'_account':RANDOM_ADDRESS,'_amount':100000}
-burnFrom_transaction = CallTransactionBuilder()\
-    .from_(operator.get_address())\
+params={
+    "_account": random_wallet.get_address(),
+    "_amount": 5,
+}
+
+call_transaction = CallTransactionBuilder()\
+    .from_(deployer_wallet.get_address())\
     .to(SCORE_ADDRESS)\
     .nid(3)\
     .nonce(100)\
-    .method('burnFrom')\
+    .method("burnFrom")\
     .params(params)\
     .build()
 
-estimate_step = icon_service.estimate_step(burnFrom_transaction)
+
+estimate_step = icon_service.estimate_step(call_transaction)
 step_limit = estimate_step + 100000
-signed_transaction = SignedTransaction(burnFrom_transaction, operator, step_limit)
+signed_transaction = SignedTransaction(call_transaction, deployer_wallet, step_limit)
 
 tx_hash = icon_service.send_transaction(signed_transaction)
 
@@ -353,7 +371,5 @@ def get_tx_result(_tx_hash):
 
 get_tx_result(tx_hash)
 ```
-**Now reexecute blocks to check the total supply and balance of random address again**
-100000 tokens are destroyed from the total_supply.
-100000 tokens are destroyed from the balance of RANDOM_ADDRESS.
- -->
+
+After this block finishes executing, now reexecute the block to check the total supply and random address balance. 5 tokens is deducted from total supply as well as from the random address. 
