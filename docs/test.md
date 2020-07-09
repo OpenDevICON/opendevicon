@@ -14,7 +14,7 @@ class SampleToken(IRC2):
     pass
 ```
 
-**[Install requirements](docs/prerequisites.md))**
+**[Install requirements](docs/prerequisites.md)**
 
 ## Now open jupyter notebook
 
@@ -156,7 +156,7 @@ tx_result = icon_service.get_transaction_result(tx_hash)
 tx_result
 ```
 
-Now as you are ready with your own Dice SCORE deployed in testnet. Let us play some game in the Jupyter Notebook using your SCORE.
+Now as you are ready with your own token deployed in testnet. Let us test transfer method in the Jupyter Notebook using your SCORE.
 
 ### Check the name, symbol, decimals and total supply
 ```Python
@@ -334,8 +334,4 @@ get_tx_result(tx_hash)
 **Now reexecute blocks to check the total supply and balance of random address again**
 100000 tokens are destroyed from the total_supply.
 100000 tokens are destroyed from the balance of RANDOM_ADDRESS.
-
-
-
-
  -->
