@@ -225,7 +225,7 @@ get_tx_result(tx_hash)
 ```
 Now reexecute the block to check the balance of deployer and random address. 5 tokens will be transferred to the random address from deployer address.
 
-## To implement mintable and burnable tokens
+## Implement mintable and burnable tokens
 
 Change token.py to implement IRC2burnable and IRC2mintable.<br>
 IRC2 Mintable and IRC2 Burnable inherits from IRC2. 
