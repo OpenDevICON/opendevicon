@@ -308,7 +308,7 @@ get_tx_result(tx_hash)
 ```
 After this block finishes executing, now reexecute the block to check the total supply and random address balance. 5 tokens are added to total supply as well as the random address.  
 
-### Testing burn method
+### Testing burning of tokens
 
 ```Python
 params={
@@ -340,7 +340,7 @@ get_tx_result(tx_hash)
 ```
 After this block finishes executing, now reexecute the block to check the total supply and deployer balance. 5 tokens is subtracted from total supply as well as from the deployer address. 
 
-### Testing mintTo method
+### Testing burnFrom method
 Using this method, tokens can be destroyed from other address as well. However, only the deployer can call this method.
 ```Python
 params={
