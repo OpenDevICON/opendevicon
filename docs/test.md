@@ -100,11 +100,12 @@ DEPLOY_PARAMS =  {
             "_initialSupply": 1000,
             "_decimals": 18
         }
-        
+
+
 deploy_transaction = DeployTransactionBuilder()\
-    .from_(operator.get_address())\
-    .to(GOVERNANCE_ADDRESS)\
-    .nid(3)\
+    .from_(deployer_wallet.get_address())\
+    .to("cx0000000000000000000000000000000000000000")\
+    .nid(NID)\
     .nonce(100)\
     .content_type("application/zip")\
     .content(gen_deploy_data_content('ODIContracts'))\
@@ -113,13 +114,16 @@ deploy_transaction = DeployTransactionBuilder()\
 
 estimate_step = icon_service.estimate_step(deploy_transaction)
 step_limit = estimate_step + 100000
-signed_transaction = SignedTransaction(deploy_transaction, operator, step_limit)
+signed_transaction = SignedTransaction(deploy_transaction, deployer_wallet, step_limit)
+
 tx_hash = icon_service.send_transaction(signed_transaction)
 
-```
-```Python
-tx_result = icon_service.get_transaction_result(tx_hash)
-tx_result
+@retry(JSONRPCException, tries=10, delay=1, back_off=2)
+def get_tx_result(_tx_hash):
+    tx_result = icon_service.get_transaction_result(_tx_hash)
+    return tx_result
+
+get_tx_result(tx_hash)
 ```
 Save the **scoreAddress** of your deployed SCORE from the **tx_result** as you will require it while moving forward.
 
@@ -130,30 +134,35 @@ SCORE_ADDRESS = "<score_address_obtained_after_deploying_the_contract>"
 ## Updating SCORE
 ```Python
 UPDATE_PARAMS =  {
-            "_tokenName": "TestToken2",
-            "_symbolName": "TK2",
-            "_initialSupply": 1000,
+            "_tokenName": "TestToken1",
+            "_symbolName": "TK1",
+            "_initialSupply": 1100,
             "_decimals": 18
         }
-        
-deploy_transaction = DeployTransactionBuilder()\
-    .from_(operator.get_address())\
+
+
+update_transaction = DeployTransactionBuilder()\
+    .from_(deployer_wallet.get_address())\
     .to(SCORE_ADDRESS)\
-    .nid(3)\
+    .nid(NID)\
     .nonce(100)\
     .content_type("application/zip")\
     .content(gen_deploy_data_content('ODIContracts'))\
     .params(UPDATE_PARAMS)\
     .build()
 
-estimate_step = icon_service.estimate_step(deploy_transaction)
+estimate_step = icon_service.estimate_step(update_transaction)
 step_limit = estimate_step + 100000
-signed_transaction = SignedTransaction(deploy_transaction, operator, step_limit)
+signed_transaction = SignedTransaction(update_transaction, deployer_wallet, step_limit)
+
 tx_hash = icon_service.send_transaction(signed_transaction)
-```
-```Python
-tx_result = icon_service.get_transaction_result(tx_hash)
-tx_result
+
+@retry(JSONRPCException, tries=10, delay=1, back_off=2)
+def get_tx_result(_tx_hash):
+    tx_result = icon_service.get_transaction_result(_tx_hash)
+    return tx_result
+
+get_tx_result(tx_hash)
 ```
 
 Now as you are ready with your own token deployed in testnet. Let us test transfer method in the Jupyter Notebook using your SCORE.
@@ -162,13 +171,25 @@ Now as you are ready with your own token deployed in testnet. Let us test transf
 ```Python
 external_methods = ["name", "symbol", "decimals", "totalSupply"]
 for method in external_methods:
-    call = CallBuilder().from_(operator.get_address())\
+    call = CallBuilder().from_(deployer_wallet.get_address())\
                     .to(SCORE_ADDRESS)\
                     .method(method)\
                     .build()
     print(icon_service.call(call))
-
 ``` 
+### Check the total number of tokens of random and deployer address
+```Python
+external_methods = [deployer_wallet.get_address(), random_wallet.get_address()]
+for address in external_methods:
+    call = CallBuilder().from_(deployer_wallet.get_address())\
+                    .to(SCORE_ADDRESS)\
+                    .method('balanceOf')\
+                    .params({'account': address})\
+                    .build()
+    print(icon_service.call(call))
+```
+*Note the balance of deployer and random address*
+
 ### Transfer of tokens
 ```Python
 params={
@@ -177,28 +198,29 @@ params={
 }
 
 call_transaction = CallTransactionBuilder()\
-    .from_(operator.get_address())\
+    .from_(deployer_wallet.get_address())\
     .to(SCORE_ADDRESS)\
     .nid(3)\
     .nonce(100)\
-    .method("Transfer")\
+    .method("transfer")\
     .params(params)\
     .build()
 
+
 estimate_step = icon_service.estimate_step(call_transaction)
 step_limit = estimate_step + 100000
-# Returns the signed transaction object having a signature
-signed_transaction = SignedTransaction(call_transaction, operator,step_limit)
+signed_transaction = SignedTransaction(call_transaction, deployer_wallet, step_limit)
 
-# Sends the transaction
 tx_hash = icon_service.send_transaction(signed_transaction)
-tx_hash
+
+@retry(JSONRPCException, tries=10, delay=1, back_off=2)
+def get_tx_result(_tx_hash):
+    tx_result = icon_service.get_transaction_result(_tx_hash)
+    return tx_result
+
+get_tx_result(tx_hash)
 ```
-```Python
-tx_result = icon_service.get_transaction_result(tx_hash)
-tx_result
-```
-_Now reexecute the block to check the balance of deployer and random address._
+_Now reexecute the block to check the balance of deployer and random address. 5 tokens will be transferred to the random address from deployer address._
 
 <!-- 
 ## Now, To implement mintable and burnable
