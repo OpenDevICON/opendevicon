@@ -1,25 +1,32 @@
 # Create your own IRC2 token
 
-**First, [Install requirements](prerequisties.md)**<br>
+## Initial Requirements
+[Install tbears](https://www.icondev.io/docs/tbears-installation)
+[Install prerequisties](prerequisites.md)
 
-## Cloning the project
-You can get the project repo from [**Github**]()
+## Initalize project
+```Shell
+$ tbears init token Token
+```
+Token will be initialized. Now, go in token directory.
+
+```Shell
+$ cd token
+$ rm -rf tests
+```
+
+Now, clone the SCORE Library from [**github**]().
 
 Run command: 
 ```Shell
-$ git clone 
+$ git clone <LINK>
 ```
 
-# After initialization...
-
-```Shell
-touch token.py
-```
-Add this to token.py
+Now, open token.py and copy this code. We inherit IRC2 from ODIContracts/token/IRC2 in our SampleToken.
 
 ```Python
 from iconservice import *
-from .tokens.IRC2 import IRC2
+from .ODIContracts.tokens.IRC2 import IRC2
 
 TAG = 'SampleToken'
 
@@ -27,8 +34,8 @@ class SampleToken(IRC2):
     pass
 ```
 
-Now, read **[SCORE Interaction](scoreinteraction.md)**. 
-Make a new python notebook, and follow the steps as mentioned in **SCORE Interaction**.<br> Now you should have deployer_wallet and caller_wallet address. Load funds to deployer_wallet address. caller_wallet will be used as a random wallet to test methods.
+Now, read **[SCORE Interaction](scoreinteraction.md)**. <br>
+Make a new python notebook, and follow the steps as mentioned in **SCORE Interaction**.<br> Now you should have deployer_wallet and caller_wallet address. Load test ICX to deployer_wallet address. caller_wallet will be used as a random wallet to test methods.
 
 
 ### Deploying the contract
