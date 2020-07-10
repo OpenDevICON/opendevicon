@@ -14,7 +14,7 @@ class SampleToken(IRC2):
     pass
 ```
 
-**[Install requirements](https://ibriz.gitbook.io/icondev-1/-M8GZOLeT06JW0Jng2Pn/getting-started/prerequisites,"Prerequisties")**
+**[Install requirements](https://ibriz.gitbook.io/icondev-1/-M8GZOLeT06JW0Jng2Pn/getting-started/prerequisites)**
 
 ### Now open jupyter notebook
 
