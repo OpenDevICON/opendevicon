@@ -14,11 +14,11 @@ class SampleToken(IRC2):
     pass
 ```
 
-**[Install requirements]('https://ibriz.gitbook.io/icondev-1/-M8GZOLeT06JW0Jng2Pn/getting-started/prerequisites',"Prerequisties")**
+**[Install requirements](https://ibriz.gitbook.io/icondev-1/-M8GZOLeT06JW0Jng2Pn/getting-started/prerequisites,"Prerequisties")**
 
 ### Now open jupyter notebook
 
-**Read [SCORE Interaction]('https://ibriz.gitbook.io/icondev-1/-M8GZOLeT06JW0Jng2Pn/jupyter-notebook/scoreinteraction') first**
+**Read [SCORE Interaction](https://ibriz.gitbook.io/icondev-1/-M8GZOLeT06JW0Jng2Pn/jupyter-notebook/scoreinteraction) first**
 
 ### Setting up environment
 Before we move on to using the SDK we first need to initialize our environment.
