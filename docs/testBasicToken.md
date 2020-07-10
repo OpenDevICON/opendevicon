@@ -35,8 +35,11 @@ class SampleToken(IRC2):
     pass
 ```
 
-Now, read **[SCORE Interaction](scoreinteraction.md)**. <br>
-Make a new python notebook, and follow the steps as mentioned in **SCORE Interaction**.<br> Now you should have deployer_wallet and caller_wallet address. Load test ICX to deployer_wallet address. caller_wallet will be used as a random wallet to test methods.
+Now, read **[SCORE Interaction](scoreinteraction.md)**. 
+
+Make a new python notebook, and follow the steps as mentioned in **SCORE Interaction**.
+
+ Now you should have deployer_wallet and caller_wallet address. Load test ICX to deployer_wallet address. caller_wallet will be used as a random wallet to test methods.
 
 
 ### Deploying the contract
