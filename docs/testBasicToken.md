@@ -1,7 +1,8 @@
 # Create your own IRC2 token
 
 ## Initial Requirements
-[Install tbears](https://www.icondev.io/docs/tbears-installation)<br>
+[Install tbears](https://www.icondev.io/docs/tbears-installation)
+
 [Install prerequisties](prerequisites.md)
 
 ## Initalize project
