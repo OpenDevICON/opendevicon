@@ -13,7 +13,7 @@
   * [SCORE Deployment](docs/scoreDeploy.md)
   * [Calling SCORE Methods](docs/callScoreMethods.md)
 * [ICX Transfer](docs/icxTransfer.md)
-* [Create Your Own Token]
+* Create Your Own Token
 	* [Basic IRC2 token](docs/testBasicToken.md)
 	* [Mintable and burnable token](docs/testMintBurnToken.md)
 

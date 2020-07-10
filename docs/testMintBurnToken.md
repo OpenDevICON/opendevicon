@@ -1,12 +1,11 @@
 # Implement mintable and burnable tokens
 
-Change token.py to implement IRC2burnable and IRC2mintable.<br>
-IRC2 Mintable and IRC2 Burnable inherits from IRC2. 
+To implement mintable and burnable token, change token.py to implement IRC2burnable and IRC2mintable.<br>
 
 ```Python
 from iconservice import *
-from .tokens.IRC2burnable import IRC2Burnable
-from .tokens.IRC2mintable import IRC2Mintable
+from .ODIContracts.tokens.IRC2burnable import IRC2Burnable
+from .ODIContracts.tokens.IRC2mintable import IRC2Mintable
 
 TAG = 'SampleToken'
 
@@ -18,9 +17,9 @@ Now, since we changed the token, we need to update the contract. Execute this bl
 
 ```Python
 UPDATE_PARAMS =  {
-            "_tokenName": "TestToken1",
-            "_symbolName": "TK1",
-            "_initialSupply": 1100,
+            "_tokenName": "TestToken",
+            "_symbolName": "TK",
+            "_initialSupply": 1000,
             "_decimals": 18
         }
 
@@ -51,6 +50,7 @@ get_tx_result(tx_hash)
 
 
 ### Testing minting of tokens
+To test minting of tokens, execute this block. `_amount` , the number of token to be minted, is given as a parameter.
 ```Python
 params={
     "_amount": 5,
@@ -83,7 +83,7 @@ After this block finishes executing, now reexecute the block to check the total 
 
 ### Testing mintTo method
 
-Using this method, tokens can be minted to other address as well. However, only the deployer can call this method.
+Using this method, tokens can be minted to other address as well. However, only the deployer can call this method. Here, `_amount` number of tokens will be minted to `_account`.
 ```Python
 params={
     "_account": caller_wallet.get_address(),

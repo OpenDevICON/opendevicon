@@ -28,7 +28,7 @@ class SampleToken(IRC2):
 ```
 
 Now, read **[SCORE Interaction](scoreinteraction.md)**. 
-Make a new python notebook, and follow the steps as mentioned in **SCORE Interaction**. Now you should have deployer_wallet and caller_wallet address. Load funds to deployer_wallet address. caller_wallet will be used as a random wallet to test methods.
+Make a new python notebook, and follow the steps as mentioned in **SCORE Interaction**.<br> Now you should have deployer_wallet and caller_wallet address. Load funds to deployer_wallet address. caller_wallet will be used as a random wallet to test methods.
 
 
 ### Deploying the contract
@@ -128,4 +128,4 @@ get_tx_result(tx_hash)
 
 Now reexecute the block to check the balance of deployer and caller address. 5 tokens will be transferred to the random address from deployer address. 
 <br>
-You have successfully created a token in ICON blockchain, and transferred fund from to another address!
+**You have successfully created a token in ICON blockchain, and transferred fund from to another address!**
