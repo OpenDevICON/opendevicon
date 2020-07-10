@@ -1,21 +1,21 @@
 # Create your own IRC2 token
 
 ## Initial Requirements
-[Install tbears](https://www.icondev.io/docs/tbears-installation)
+[Install tbears](https://www.icondev.io/docs/tbears-installation)<br>
 [Install prerequisties](prerequisites.md)
 
 ## Initalize project
 ```Shell
 $ tbears init token Token
 ```
-Token will be initialized. Now, go in token directory.
+Token will be initialized. Now, go in token directory. Remove tests directory as we will not be using it to test our token. 
 
 ```Shell
 $ cd token
 $ rm -rf tests
 ```
 
-Now, clone the SCORE Library from [**github**]().
+Now, You can clone the SCORE library repo from [**Github**]()
 
 Run command: 
 ```Shell
