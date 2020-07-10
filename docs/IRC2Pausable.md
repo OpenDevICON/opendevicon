@@ -41,14 +41,7 @@ def unpause(self):
 #### Paused
 ```
 @eventlog(indexed=1)
-def Paused(self, by:Address):
-```
-
-#### Unpaused
-```
-@eventlog(indexed=1)
-def Unpaused(self, by:Address):
-
+def Paused(self, status:bool):
 ```
 ---
 
