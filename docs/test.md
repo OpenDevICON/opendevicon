@@ -124,7 +124,7 @@ def get_tx_result(_tx_hash):
     return tx_result
 
 tx_result = get_tx_result(tx_hash)
-SCORE_ADDRESS = tx_result['ScoreAddress']
+SCORE_ADDRESS = tx_result['scoreAddress']
 ```
 Save the **scoreAddress** of your deployed SCORE from the **tx_result** as you will require it while moving forward.
 
