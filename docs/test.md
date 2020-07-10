@@ -123,13 +123,11 @@ def get_tx_result(_tx_hash):
     tx_result = icon_service.get_transaction_result(_tx_hash)
     return tx_result
 
-get_tx_result(tx_hash)
+tx_result = get_tx_result(tx_hash)
+SCORE_ADDRESS = tx_result['ScoreAddress']
 ```
 Save the **scoreAddress** of your deployed SCORE from the **tx_result** as you will require it while moving forward.
 
-```Python
-SCORE_ADDRESS = "<score_address_obtained_after_deploying_the_contract>"
-```
 
 ### Updating SCORE
 ```Python
