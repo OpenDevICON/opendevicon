@@ -9,7 +9,7 @@
 ```Shell
 $ tbears init token Token
 ```
-Boilerplate for your token will be initialized. The structure of token is:
+Boilerplate for your token will be initialized. The project tree is:
 ```
 └── token
     ├── __init__.py
@@ -50,7 +50,6 @@ Move the files in odi-contracts to the main directory such that the project tree
 │       └── pausable.py
 ├── __init__.py
 ├── package.json
-├── repeater.py
 └── token.py
 ```
 Remove tests directory from token as we will not be using it to test our token. Also copy the following code in token.py\.  
@@ -68,11 +67,10 @@ TAG = 'SampleToken'
 class SampleToken(IRC2):
     pass
 ```
-> We inherit IRC2 from ODIContracts/token/IRC2 in our SampleToken. So the structure must be maintained.
+> We inherit IRC2 from ODIContracts/token/IRC2 in our SampleToken. So the structure must be maintained to avoid *Invalid Path Errors*.
 
- 
 
-Make a new python notebook, and follow the steps as mentioned in **SCORE Interaction**.
+Make a new python notebook outside the project directory, and follow the steps as mentioned in **SCORE Interaction**.
 
  Now you should have deployer_wallet and caller_wallet address. Load test ICX to deployer_wallet address. caller_wallet will be used as a random wallet to test methods.
 
@@ -173,5 +171,6 @@ get_tx_result(tx_hash)
 ```
 
 Now reexecute the block to check the balance of deployer and caller address. 5 tokens will be transferred to the random address from deployer address. 
-<br>
-**You have successfully created a token in ICON blockchain, and transferred fund from to another address!**
+
+
+**CONGRATULATIONS! You have successfully created a token in ICON blockchain, and transferred fund from to another address!**
