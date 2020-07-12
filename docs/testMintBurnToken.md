@@ -9,7 +9,7 @@ from .ODIContracts.tokens.IRC2mintable import IRC2Mintable
 
 TAG = 'SampleToken'
 
-class SampleToken(IRC2Pausable, IRC2Mintable):
+class SampleToken(IRC2Burnable, IRC2Mintable):
     pass
 ```
 
@@ -22,7 +22,6 @@ UPDATE_PARAMS =  {
             "_initialSupply": 1000,
             "_decimals": 18
         }
-
 
 update_transaction = DeployTransactionBuilder()\
     .from_(deployer_wallet.get_address())\
@@ -49,8 +48,9 @@ get_tx_result(tx_hash)
 ```
 
 
-### Testing minting of tokens
-To test minting of tokens, execute this block. `_amount` , the number of token to be minted, is given as a parameter.
+### Test mint method
+Using this method, `_amount` tokens can be minted to deployer address.
+> Only the deployer can call this method.
 ```Python
 params={
     "_amount": 5,
@@ -79,9 +79,9 @@ def get_tx_result(_tx_hash):
 
 get_tx_result(tx_hash)
 ```
-After this block finishes executing, now reexecute the block to check the total supply and deployer balance. 5 tokens are added to total supply as well as the deployer address. 
+After this block finishes executing, reexecute the block to check the total supply and deployer balance. 5 tokens must be added to total supply as well as the deployer address. 
 
-### Testing mintTo method
+### Test mintTo method
 
 Using this method, tokens can be minted to other address as well. However, only the deployer can call this method. Here, `_amount` number of tokens will be minted to `_account`.
 ```Python
@@ -115,7 +115,7 @@ get_tx_result(tx_hash)
 ```
 After this block finishes executing, now reexecute the block to check the total supply and random address balance. 5 tokens are added to total supply as well as the caller address.  
 
-### Testing burning of tokens
+### Test burn method
 
 ```Python
 params={
@@ -147,7 +147,7 @@ get_tx_result(tx_hash)
 ```
 After this block finishes executing, now reexecute the block to check the total supply and deployer balance. 5 tokens is subtracted from total supply as well as from the deployer address. 
 
-### Testing burnFrom method
+### Test burnFrom method
 Using this method, tokens can be destroyed from other address as well. However, only the deployer can call this method.
 ```Python
 params={
