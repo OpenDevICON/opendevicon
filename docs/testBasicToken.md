@@ -8,6 +8,7 @@
 ## Initalize project
 ```Shell
 $ tbears init token Token
+$ cd token
 ```
 Boilerplate for your token will be initialized. The project tree is:
 ```
@@ -30,7 +31,6 @@ $ git clone <LINK>
 Remove tests directory from token as we will not be using it to test our token. 
 
 ```Shell
-$ cd token
 $ rm -rf tests
 ```
 
