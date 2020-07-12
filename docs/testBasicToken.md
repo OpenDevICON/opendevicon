@@ -20,19 +20,13 @@ Boilerplate for your token will be initialized. The structure of token is:
     │   └── test_unit_token.py
     └── token.py
 ```   
-    Now, go in token directory. Remove tests directory as we will not be using it to test our token. 
 
-```Shell
-$ cd token
-$ rm -rf tests
-```
+Clone the SCORE library repo from [**Github**]()
 
-Now, You can clone the SCORE library repo from [**Github**]()
-
-Run command: 
 ```Shell
 $ git clone <LINK>
 ```
+
 Move the files in odi-contracts to the main directory such that the project tree looks as :
 ```
 ├── ODIContracts
@@ -59,9 +53,12 @@ Move the files in odi-contracts to the main directory such that the project tree
 ├── repeater.py
 └── token.py
 ```
+Remove tests directory from token as we will not be using it to test our token. Also copy the following code in token.py\.  
 
-Now, open token.py and copy this code. We inherit IRC2 from ODIContracts/token/IRC2 in our SampleToken.
-
+```Shell
+$ cd token
+$ rm -rf tests
+```
 ```Python
 from iconservice import *
 from .ODIContracts.tokens.IRC2 import IRC2
@@ -71,8 +68,9 @@ TAG = 'SampleToken'
 class SampleToken(IRC2):
     pass
 ```
+> We inherit IRC2 from ODIContracts/token/IRC2 in our SampleToken. So the structure must be maintained.
 
-Now, read **[SCORE Interaction](scoreinteraction.md)**. 
+ 
 
 Make a new python notebook, and follow the steps as mentioned in **SCORE Interaction**.
 
