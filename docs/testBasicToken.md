@@ -9,7 +9,18 @@
 ```Shell
 $ tbears init token Token
 ```
-Token will be initialized. Now, go in token directory. Remove tests directory as we will not be using it to test our token. 
+Boilerplate for your token will be initialized. The structure of token is:
+```
+└── token
+    ├── __init__.py
+    ├── package.json
+    ├── tests
+    │   ├── __init__.py
+    │   ├── test_integrate_token.py
+    │   └── test_unit_token.py
+    └── token.py
+```   
+    Now, go in token directory. Remove tests directory as we will not be using it to test our token. 
 
 ```Shell
 $ cd token
@@ -21,6 +32,32 @@ Now, You can clone the SCORE library repo from [**Github**]()
 Run command: 
 ```Shell
 $ git clone <LINK>
+```
+Move the files in odi-contracts to the main directory such that the project tree looks as :
+```
+├── ODIContracts
+│   ├── __init__.py
+│   ├── math
+│   │   ├── SafeMath.py
+│   │   └── __init__.py
+│   ├── package.json
+│   ├── token.py
+│   ├── tokens
+│   │   ├── IIRC2.py
+│   │   ├── IRC2.py
+│   │   ├── IRC2burnable.py
+│   │   ├── IRC2capped.py
+│   │   ├── IRC2mintable.py
+│   │   ├── IRC2pausable.py
+│   │   └── IRC2snapshot.py
+│   └── utils
+│       ├── checks.py
+│       ├── consts.py
+│       └── pausable.py
+├── __init__.py
+├── package.json
+├── repeater.py
+└── token.py
 ```
 
 Now, open token.py and copy this code. We inherit IRC2 from ODIContracts/token/IRC2 in our SampleToken.
