@@ -27,6 +27,21 @@ Clone the SCORE library repo from [**Github**]()
 $ git clone <LINK>
 ```
 
+Remove tests directory from token as we will not be using it to test our token. Also copy the following code in token.py\.  
+
+```Shell
+$ cd token
+$ rm -rf tests
+```
+```Python
+from iconservice import *
+from .ODIContracts.tokens.IRC2 import IRC2
+
+TAG = 'SampleToken'
+
+class SampleToken(IRC2):
+    pass
+```
 Move the files in odi-contracts to the main directory such that the project tree looks as :
 ```
 ├── ODIContracts
@@ -52,27 +67,13 @@ Move the files in odi-contracts to the main directory such that the project tree
 ├── package.json
 └── token.py
 ```
-Remove tests directory from token as we will not be using it to test our token. Also copy the following code in token.py\.  
-
-```Shell
-$ cd token
-$ rm -rf tests
-```
-```Python
-from iconservice import *
-from .ODIContracts.tokens.IRC2 import IRC2
-
-TAG = 'SampleToken'
-
-class SampleToken(IRC2):
-    pass
-```
 > We inherit IRC2 from ODIContracts/token/IRC2 in our SampleToken. So the structure must be maintained to avoid *Invalid Path Errors*.
 
 
+---
+
 Make a new python notebook outside the project directory, and follow the steps as mentioned in **SCORE Interaction**.
 
----
 
  Now you should have deployer_wallet and caller_wallet address. Load test ICX to deployer_wallet address. caller_wallet will be used as a random wallet to test methods.
 
