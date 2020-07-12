@@ -49,8 +49,7 @@ get_tx_result(tx_hash)
 
 
 ### Test mint method
-Using this method, `_amount` tokens can be minted to deployer address.
-> Only the deployer can call this method.
+Using this method, `_amount` tokens can be minted to deployer address. Only the deployer can call this method.
 ```Python
 params={
     "_amount": 5,
