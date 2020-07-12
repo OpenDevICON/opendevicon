@@ -72,6 +72,8 @@ class SampleToken(IRC2):
 
 Make a new python notebook outside the project directory, and follow the steps as mentioned in **SCORE Interaction**.
 
+---
+
  Now you should have deployer_wallet and caller_wallet address. Load test ICX to deployer_wallet address. caller_wallet will be used as a random wallet to test methods.
 
 
