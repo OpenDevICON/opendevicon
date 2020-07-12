@@ -27,22 +27,15 @@ Clone the SCORE library repo from [**Github**]()
 $ git clone <LINK>
 ```
 
-Remove tests directory from token as we will not be using it to test our token. Also copy the following code in token.py\.  
+Remove tests directory from token as we will not be using it to test our token. 
 
 ```Shell
 $ cd token
 $ rm -rf tests
 ```
-```Python
-from iconservice import *
-from .ODIContracts.tokens.IRC2 import IRC2
 
-TAG = 'SampleToken'
-
-class SampleToken(IRC2):
-    pass
-```
 Move the files in odi-contracts to the main directory such that the project tree looks as :
+
 ```
 ├── ODIContracts
 │   ├── __init__.py
@@ -69,7 +62,17 @@ Move the files in odi-contracts to the main directory such that the project tree
 ```
 > We inherit IRC2 from ODIContracts/token/IRC2 in our SampleToken. So the structure must be maintained to avoid *Invalid Path Errors*.
 
+Now, change token.py to this\. 
 
+```Python
+from iconservice import *
+from .ODIContracts.tokens.IRC2 import IRC2
+
+TAG = 'SampleToken'
+
+class SampleToken(IRC2):
+    pass
+```
 ---
 
 Make a new python notebook outside the project directory, and follow the steps as mentioned in **SCORE Interaction**.
