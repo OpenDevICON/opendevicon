@@ -4,7 +4,7 @@ For transfering a ICX to a particular wallet address or contract address we will
 
 Here we will be using this to transfer 99 ICX from our deployer wallet to our dice SCORE.
 {% hint style="warning" %}
-If you dnt have enough ICX in your wallet then the transfer will fail. Use [**ibriz-faucet**](https://icon-faucet.ibriz.ai/) for getting ICX.
+If you don't have enough ICX in your wallet then the transfer will fail. Use [**ibriz-faucet**](https://icon-faucet.ibriz.ai/) for getting ICX.
 
 Also use deployer wallet only to make the transfer because fallback method of Dice SCORE only accepts incoming plain ICX from its owner
 {% endhint %}
