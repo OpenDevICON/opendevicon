@@ -5,68 +5,44 @@
 
 [Install prerequisties](prerequisites.md)
 
+```Shell
+pip install -i https://test.pypi.org/simple/ odicontracts1==0.0.1
+```
+
 ## Initalize project
 ```Shell
+$ mkdir token-test
+$ cd token-test
 $ tbears init token Token
 $ cd token
 ```
 Boilerplate for your token will be initialized. The project tree is:
 ```
-└── token
-    ├── __init__.py
-    ├── package.json
-    ├── tests
-    │   ├── __init__.py
-    │   ├── test_integrate_token.py
-    │   └── test_unit_token.py
-    └── token.py
+└── token-test
+    └── token
+        ├── __init__.py
+        ├── package.json
+        ├── tests
+        │   ├── __init__.py
+        │   ├── test_integrate_token.py
+        │   └── test_unit_token.py
+        └── token.py
 ```   
 
-Clone the SCORE library repo from [**Github**]()
-
-```Shell
-$ git clone <LINK>
-```
 
 Remove tests directory from token as we will not be using it to test our token. 
+Also, remove \__init__.py
 
 ```Shell
 $ rm -rf tests
+$ rm -rf __init__.py
 ```
-
-Move the files in odi-contracts to the main directory such that the project tree looks as :
-
-```
-├── ODIContracts
-│   ├── __init__.py
-│   ├── math
-│   │   ├── SafeMath.py
-│   │   └── __init__.py
-│   ├── package.json
-│   ├── token.py
-│   ├── tokens
-│   │   ├── IIRC2.py
-│   │   ├── IRC2.py
-│   │   ├── IRC2burnable.py
-│   │   ├── IRC2capped.py
-│   │   ├── IRC2mintable.py
-│   │   ├── IRC2pausable.py
-│   │   └── IRC2snapshot.py
-│   └── utils
-│       ├── checks.py
-│       ├── consts.py
-│       └── pausable.py
-├── __init__.py
-├── package.json
-└── token.py
-```
-> We inherit IRC2 from ODIContracts/token/IRC2 in our SampleToken. So the structure must be maintained to avoid *Invalid Path Errors*.
 
 Now, change token.py to this\. 
 
 ```Python
 from iconservice import *
-from .ODIContracts.tokens.IRC2 import IRC2
+from ODIContracts.tokens.IRC2 import IRC2
 
 TAG = 'SampleToken'
 
