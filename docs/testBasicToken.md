@@ -34,7 +34,7 @@ $ rm -rf tests
 $ rm -rf __init__.py
 ```
 
-Now, install this **[ODI Contracts]()** library.  
+Now, install this **[ODI Contracts]()** library. Package import is prohibited except iconservice and the files in your deployed SCORE folder tree. So, the ODI Contracts library cannot be installed from outside.
 
 ```Shell
 $ pip install -i https://test.pypi.org/simple/ odicontracts1==0.0.1 -t .
