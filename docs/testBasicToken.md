@@ -3,7 +3,7 @@
 ## Initial Requirements
 [Install tbears](https://www.icondev.io/docs/tbears-installation)
 
-[Install prerequisties](prerequisites.md)1
+[Install prerequisties](prerequisites.md)
 
 ## Initalize project
 ```Shell
@@ -34,7 +34,7 @@ $ rm -rf tests
 $ rm -rf __init__.py
 ```
 
-Now, install this **[ODI Contracts]()** library. Package import is prohibited except iconservice and the files in your deployed SCORE folder tree. So, the ODI Contracts library cannot be installed from outside.
+Now, install this **[ODI Contracts]()** library. Package import is prohibited except iconservice and the files in your deployed SCORE folder tree. So, the ODI Contracts library cannot be imported from outside.
 
 ```Shell
 $ pip install -i https://test.pypi.org/simple/ odicontracts1==0.0.1 -t .
