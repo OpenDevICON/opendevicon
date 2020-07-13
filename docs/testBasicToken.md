@@ -79,7 +79,7 @@ deploy_transaction = DeployTransactionBuilder()\
     .nid(NID)\
     .nonce(100)\
     .content_type("application/zip")\
-    .content(gen_deploy_data_content('ODIContracts'))\
+    .content(gen_deploy_data_content('token'))\
     .params(DEPLOY_PARAMS)\
     .build()
 
