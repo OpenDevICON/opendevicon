@@ -3,16 +3,7 @@
 ## Initial Requirements
 [Install tbears](https://www.icondev.io/docs/tbears-installation)
 
-[Install prerequisties](prerequisites.md)
-
-**[ODI Contracts]()**
-
-This package has a library for SCORE development in ICON blockchain. 
-
-Installation
-```Shell
-$ pip install -i https://test.pypi.org/simple/ odicontracts1==0.0.1
-```
+[Install prerequisties](prerequisites.md)1
 
 ## Initalize project
 ```Shell
@@ -43,11 +34,17 @@ $ rm -rf tests
 $ rm -rf __init__.py
 ```
 
+Now, install this **[ODI Contracts]()** library.  
+
+```Shell
+$ pip install -i https://test.pypi.org/simple/ odicontracts1==0.0.1 -t .
+```
+
 Now, change token.py to this\. 
 
 ```Python
 from iconservice import *
-from ODIContracts.tokens.IRC2 import IRC2
+from .ODIContracts.tokens.IRC2 import IRC2
 
 TAG = 'Token'
 

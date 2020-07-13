@@ -4,8 +4,8 @@ To implement mintable and burnable token, change token.py to implement IRC2burna
 
 ```Python
 from iconservice import *
-from ODIContracts.tokens.IRC2burnable import IRC2Burnable
-from ODIContracts.tokens.IRC2mintable import IRC2Mintable
+from .ODIContracts.tokens.IRC2burnable import IRC2Burnable
+from .ODIContracts.tokens.IRC2mintable import IRC2Mintable
 
 TAG = 'SampleToken'
 
