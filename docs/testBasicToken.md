@@ -5,7 +5,7 @@
 
 [Install prerequisties](prerequisites.md)
 
-**ODI Contracts**
+**[ODI Contracts]()**
 
 This package has a library for SCORE development in ICON blockchain. 
 
