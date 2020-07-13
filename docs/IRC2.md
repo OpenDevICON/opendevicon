@@ -79,6 +79,22 @@ Must trigger on any successful token transfers.
 def Transfer(self, _from: Address, _to: Address, _value: int, _data: bytes):
     pass
 ```
+#### Mint
+Triggered after any successful mint and mintTo methods.
+```Python
+@eventlog(indexed=1)
+def Mint(self, account:Address, amount: int):
+	pass
+```
+
+#### Burn
+Triggered after any successful burn and burnFrom methods.
+```Python
+@eventlog(indexed=1)
+def Burn(self, account: Address, amount: int):
+	pass
+```
+
 
 #### Token Fallback
 A function for handling token transfers, which is called from the token contract, when a token holder sends tokens. `_from` is the address of the sender of the token, `_value` is the amount of incoming tokens, and `_data` is arbitrary attached data. It works by analogy with the fallback function of the normal transactions and returns nothing.
