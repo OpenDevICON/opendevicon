@@ -116,6 +116,8 @@ def get_tx_result(_tx_hash):
 tx_result = get_tx_result(tx_hash)
 SCORE_ADDRESS = tx_result['scoreAddress']
 ```
+The decorator `@retry()` is imported from the [**repeater**](https://github.com/OpenDevICON/opendevicon/blob/master/repeater.py) module. 
+
 
 The **scoreAddress** of your deployed SCORE from the **tx_result** will be saved to the variable SCORE_ADDRESS as you will require it while moving forward.
 

@@ -11,14 +11,14 @@ Note: When the tokens are paused, token transfers are NOT suspended for later. T
 ## Methods
 
 #### paused
-Returns if the token transfer has been paused.
+Returns True if the token transfer has been paused.
 ```
 @external(readonly=True)
 def paused(self) -> bool:
 ```
 
 #### pause
-Pauses the token transfers. This method can be executed only by the owner of SCORE when the SCORE is not already in paused state. It emits Paused event.
+Pauses the token transfers. This method can be executed only by the owner of SCORE when the SCORE is not in paused state. It emits Paused event.
 ```
 @external
 @whenNotPaused
@@ -59,7 +59,7 @@ def _beforeTokenTransfer(self, _from:Address, _to:Address, _value:int) -> None:
 ## Exceptions
 
 #### AlreadyPausedException:
-This exception is raised when the SCORE is already is paused state and token transfers calls are called. It is also raised when the pause method is called even though the SCORE is already in paused state. 
+This exception is raised when the SCORE is already in paused state and token transfers calls are called. It is also raised when the pause method is called even though the SCORE is already in paused state. 
 
 #### AlreadyUnpausedException:
 This exception is raised when unpause method is called when the SCORE is already in unpaused state.
