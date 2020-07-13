@@ -115,7 +115,7 @@ get_tx_result(tx_hash)
 After this block finishes executing, now reexecute the block to check the total supply and random address balance. 5 tokens are added to total supply as well as the caller address.  
 
 ### Test burn method
-
+Using this method, `_amount` tokens can be destroyed from deployer address. Only the deployer can call this method.
 ```Python
 params={
     "_amount": 5,
