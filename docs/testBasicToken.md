@@ -49,9 +49,9 @@ Now, change token.py to this\.
 from iconservice import *
 from ODIContracts.tokens.IRC2 import IRC2
 
-TAG = 'SampleToken'
+TAG = 'Token'
 
-class SampleToken(IRC2):
+class Token(IRC2):
     pass
 ```
 ---
