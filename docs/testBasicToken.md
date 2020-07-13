@@ -5,6 +5,9 @@
 
 [Install prerequisties](prerequisites.md)
 
+**ODI Contracts**
+This package has a library for SCORE development in ICON blockchain. 
+Installation
 ```Shell
 pip install -i https://test.pypi.org/simple/ odicontracts1==0.0.1
 ```
