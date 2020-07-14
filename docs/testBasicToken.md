@@ -42,7 +42,8 @@ Now, ODIContracts library will be in sampletoken directory along with \__init__.
  
 Now, the tree structure is:
 ```
-sampletoken
+token-test
+├── sampletoken
    ├── __init__.py
    ├── ODIContracts
    │   ├── __init__.py
@@ -65,7 +66,7 @@ sampletoken
    └── sampletoken.py
 ```
 {% hint style="info"%}
-All `pycache` folders and contents of `odi_token_contracts-0.0.1.dist-info` are ignored in this tree. 
+All `__pycache__` folders and contents of `odi_token_contracts-0.0.1.dist-info` are ignored in this tree. 
 {% endhint %}
 
 Then, change token.py to this. 
