@@ -151,7 +151,7 @@ tx_result
 ```
 {% hint style="info"%}
 If you get the error  
-`Raised JSONRPCException while returning the custom response. Error message: {'code': -32602, 'message': 'Pending transaction'}`, execute the block again. Or you can use the @retry decorator as in `deploying the contract`.
+`Raised JSONRPCException while returning the custom response. Error message: {'code': -32602, 'message': 'Pending transaction'}` execute the block again. Or you can use the @retry decorator as in deploying the contract.
 {% endhint %}
 
 Now reexecute the block to check the balance of deployer and caller address. 5 tokens will be transferred to the random address from deployer address. 
