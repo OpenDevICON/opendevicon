@@ -151,5 +151,9 @@ Raised when the length of the `_tokenName` and `_symbolName` of the token is 0.
 ####OverCapLimit
 Raised when total supply exceeds the cap limit.
 
+####InsufficientAllowanceError
+Raised when amount to be transferred exceeds the allowance amount.
+
+
 ## Implementation
 * [IRC2 Token](https://github.com/OpenDevICON/odi-contracts/blob/test-fixed/ODIContracts/tokens/IRC2.py "IRC2")
