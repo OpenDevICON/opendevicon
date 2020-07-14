@@ -104,4 +104,4 @@ _updateTotalSupplySnapshot(self) -> None:
 
 ## Implementation
 
-* [IRC2Snapshot Token](https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/token/ERC20/ERC20Snapshot.sol, "IRC2Snapshot")
+* [IRC2Snapshot Token](https://github.com/OpenDevICON/odi-contracts/blob/test-fixed/ODIContracts/tokens/IRC2snapshot.py, "IRC2Snapshot")

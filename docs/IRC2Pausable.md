@@ -63,3 +63,7 @@ This exception is raised when the SCORE is already in paused state and token tra
 
 #### AlreadyUnpausedException:
 This exception is raised when unpause method is called when the SCORE is already in unpaused state.
+
+## Implementation
+
+* [IRC2Pausable Token](https://github.com/OpenDevICON/odi-contracts/blob/test-fixed/ODIContracts/tokens/IRC2pausable.py, "IRC2Pausable")
