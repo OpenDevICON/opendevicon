@@ -3,9 +3,10 @@
 Before showing the usage of PythonSDK in Jupyter Notebook, we will require a SCORE to be interacted with. For this documentation we chose one of the SCORE having highest number of transactions in ICON blockchain ie Dice SCORE of [ICONbet](https://iconbet.io/).
 
 Some changes have been made to the actual SCORE to make it easier for demonstration purpose.
-You can access the project folder from [**Github**](https://github.com/OpenDevICON/opendevicon/tree/development/dice).
+You can access the project folder from [**Github**](https://github.com/kailehok/opendevicon/tree/master/dice).
 
 ## Dice SCORE
+
 The following is the code snippet for the dice SCORE:-
 
 ```py
@@ -55,7 +56,7 @@ class Dice(IconScoreBase):
 
     @external
     def toggle_game_status(self) -> None:
-    
+
         if self.msg.sender != self.owner:
             revert('Only the owner can call the toggle_game_status method')
         self._game_on.set(not self._game_on.get() )
@@ -85,7 +86,7 @@ class Dice(IconScoreBase):
         #condition checks
         if not self._game_on.get():
             revert(f'Game not active yet.')
-        
+
         if not (0 <= upper <= 99 and 0 <= lower <= 99):
             revert(f'Invalid bet. Choose a number between 0 to 99')
         if not (0 <= upper - lower <= 95):
