@@ -33,14 +33,12 @@ Remove tests directory from token as we will not be using it to test our token.
 $ rm -rf tests
 ```
 
-Now, install this **[ODI Contracts]()** library. Package import is prohibited except iconservice and the files in your deployed SCORE folder tree. So, the ODI Contracts library should be inside the directory, and cannot be imported from outside.
+Now, install **[ODI Contracts]()** library. Package import is prohibited except iconservice and the files in your deployed SCORE folder tree. So, the ODI Contracts library should be inside the directory, and cannot be imported from outside.
 
 ```Shell
 $ pip install odi-token-contracts -t .
 ```
-Now, ODIContracts library will be in sampletoken directory along with \__init__.py, package.json and sampletoken.py. 
- 
-Now, the tree structure is:
+ODIContracts library will be in sampletoken directory along with \__init__.py, package.json and sampletoken.py. The tree structure is:
 ```
 token-test
 ├── sampletoken
@@ -82,7 +80,7 @@ class SampleToken(IRC2):
 ```
 ---
 
-Make a new python notebook in the *token-test* directory, and follow the steps as mentioned in **SCORE Interaction**.
+Make a new python notebook in the *token-test* directory, and follow the steps as mentioned in **[SCORE Interaction](scoreInteraction.md)**.
 
 
 Now you should have deployer_wallet and caller_wallet address. Load test ICX to deployer_wallet address. caller_wallet will be used as a random wallet to test methods.
