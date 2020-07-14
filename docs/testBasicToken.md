@@ -65,7 +65,7 @@ sampletoken
    └── sampletoken.py
 ```
 {% hint style="info"%}
-All pycache folders and contents of `odi_token_contracts-0.0.1.dist-info` are ignored in this tree. 
+All `pycache` folders and contents of `odi_token_contracts-0.0.1.dist-info` are ignored in this tree. 
 {% endhint %}
 
 Then, change token.py to this. 
