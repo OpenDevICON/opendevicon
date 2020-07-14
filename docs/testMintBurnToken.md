@@ -15,6 +15,8 @@ class SampleToken(IRC2Burnable, IRC2Mintable):
 
 Now, since we changed the token, we need to update the contract. Execute this block to update the contract again without making change to other blocks.
 
+> While updating the contract, the parameters can be changed as well.
+
 ```Python
 UPDATE_PARAMS =  {
             "_tokenName": "TestToken",
@@ -29,7 +31,7 @@ update_transaction = DeployTransactionBuilder()\
     .nid(NID)\
     .nonce(100)\
     .content_type("application/zip")\
-    .content(gen_deploy_data_content('token'))\
+    .content(gen_deploy_data_content('sampletoken'))\
     .params(UPDATE_PARAMS)\
     .build()
 

@@ -9,29 +9,27 @@
 ```Shell
 $ mkdir token-test
 $ cd token-test
-$ tbears init token Token
+$ tbears init sampletoken SampleToken
 $ cd token
 ```
 Boilerplate for your token will be initialized. The project tree is:
 ```
 └── token-test
-    └── token
+    └── sampletoken
         ├── __init__.py
         ├── package.json
         ├── tests
         │   ├── __init__.py
         │   ├── test_integrate_token.py
         │   └── test_unit_token.py
-        └── token.py
+        └── sampletoken.py
 ```   
 
 
 Remove tests directory from token as we will not be using it to test our token. 
-Also, remove \__init__.py
 
 ```Shell
 $ rm -rf tests
-$ rm -rf __init__.py
 ```
 
 Now, install this **[ODI Contracts]()** library. Package import is prohibited except iconservice and the files in your deployed SCORE folder tree. So, the ODI Contracts library cannot be imported from outside.
@@ -46,14 +44,15 @@ Now, change token.py to this\.
 from iconservice import *
 from .ODIContracts.tokens.IRC2 import IRC2
 
-TAG = 'Token'
+TAG = 'SampleToken'
 
-class Token(IRC2):
+class SampleToken(IRC2):
     pass
+
 ```
 ---
 
-Make a new python notebook outside the project directory, and follow the steps as mentioned in **SCORE Interaction**.
+Make a new python notebook in the *token-test* directory, and follow the steps as mentioned in **SCORE Interaction**.
 
 
  Now you should have deployer_wallet and caller_wallet address. Load test ICX to deployer_wallet address. caller_wallet will be used as a random wallet to test methods.
@@ -76,7 +75,7 @@ deploy_transaction = DeployTransactionBuilder()\
     .nid(NID)\
     .nonce(100)\
     .content_type("application/zip")\
-    .content(gen_deploy_data_content('token'))\
+    .content(gen_deploy_data_content('sampletoken'))\
     .params(DEPLOY_PARAMS)\
     .build()
 
