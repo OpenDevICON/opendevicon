@@ -13,3 +13,4 @@ There are multiple other extensions.
 * [IRC2Capped](IRC2Capped.md): Total supply cannot exceed the cap amount. 
 * [IRC2Burnable](IRC2Burnable.md): To destroy the tokens.
 * [IRC2Pausable](IRC2Pausable.md): To pause token operation for all users.
+* [IRC2Snapshot](IRC2Snapshot.md): To add snapshot mechanism.
