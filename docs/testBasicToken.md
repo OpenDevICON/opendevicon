@@ -146,14 +146,13 @@ step_limit = estimate_step + 100000
 signed_transaction = SignedTransaction(call_transaction, deployer_wallet, step_limit)
 
 tx_hash = icon_service.send_transaction(signed_transaction)
-
-@retry(JSONRPCException, tries=10, delay=1, back_off=2)
-def get_tx_result(_tx_hash):
-    tx_result = icon_service.get_transaction_result(_tx_hash)
-    return tx_result
-
-get_tx_result(tx_hash)
+tx_result = icon_service.get_transaction_result(_tx_hash)
+tx_result
 ```
+{% hint style="info"%}
+If you get the error  
+`Raised JSONRPCException while returning the custom response. Error message: {'code': -32602, 'message': 'Pending transaction'}`, execute the block again. Or you can use the @retry decorator as in `deploying the contract`.
+{% endhint %}
 
 Now reexecute the block to check the balance of deployer and caller address. 5 tokens will be transferred to the random address from deployer address. 
 
