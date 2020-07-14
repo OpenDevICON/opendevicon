@@ -12,6 +12,8 @@ $ cd token-test
 $ tbears init sampletoken SampleToken
 $ cd token
 ```
+
+
 Boilerplate for your token will be initialized. The project tree is:
 ```
 └── token-test
@@ -25,20 +27,48 @@ Boilerplate for your token will be initialized. The project tree is:
         └── sampletoken.py
 ```   
 
-
 Remove tests directory from token as we will not be using it to test our token. 
 
 ```Shell
 $ rm -rf tests
 ```
 
-Now, install this **[ODI Contracts]()** library. Package import is prohibited except iconservice and the files in your deployed SCORE folder tree. So, the ODI Contracts library cannot be imported from outside.
+Now, install this **[ODI Contracts]()** library. Package import is prohibited except iconservice and the files in your deployed SCORE folder tree. So, the ODI Contracts library should be inside the directory, and cannot be imported from outside.
 
 ```Shell
-$ pip install -i https://test.pypi.org/simple/ odicontracts1==0.0.1 -t .
+$ pip install odi-token-contracts -t .
 ```
+Now, ODIContracts library will be in sampletoken directory along with \__init__.py, package.json and sampletoken.py. 
+ 
+Now, the tree structure is:
+```
+sampletoken
+   ├── __init__.py
+   ├── ODIContracts
+   │   ├── __init__.py
+   │   ├── tokens
+   │   │   ├── IIRC2.py
+   │   │   ├── __init__.py
+   │   │   ├── IRC2burnable.py
+   │   │   ├── IRC2capped.py
+   │   │   ├── IRC2mintable.py
+   │   │   ├── IRC2pausable.py
+   │   │   ├── IRC2.py
+   │   │   ├── IRC2snapshot.py
+   │   └── utils
+   │       ├── checks.py
+   │       ├── consts.py
+   │       ├── __init__.py
+   │       ├── pausable.py
+   ├── odi_token_contracts-0.0.1.dist-info
+   ├── package.json
+   └── sampletoken.py
+```
+{% hint style="info"%}
+All pycache folders and contents of `odi_token_contracts-0.0.1.dist-info` are ignored in this tree. 
+{% endhint %}
 
-Now, change token.py to this\. 
+Then, change token.py to this. 
 
 ```Python
 from iconservice import *
@@ -48,14 +78,13 @@ TAG = 'SampleToken'
 
 class SampleToken(IRC2):
     pass
-
 ```
 ---
 
 Make a new python notebook in the *token-test* directory, and follow the steps as mentioned in **SCORE Interaction**.
 
 
- Now you should have deployer_wallet and caller_wallet address. Load test ICX to deployer_wallet address. caller_wallet will be used as a random wallet to test methods.
+Now you should have deployer_wallet and caller_wallet address. Load test ICX to deployer_wallet address. caller_wallet will be used as a random wallet to test methods.
 
 
 ### Deploying the contract
