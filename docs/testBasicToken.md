@@ -149,12 +149,13 @@ tx_hash = icon_service.send_transaction(signed_transaction)
 tx_result = icon_service.get_transaction_result(_tx_hash)
 tx_result
 ```
+
+Now reexecute the block to check the balance of deployer and caller address. 5 tokens will be transferred to the random address from deployer address. 
+
 {% hint style="info"%}
 If you get the error  
 `Raised JSONRPCException while returning the custom response. Error message: {'code': -32602, 'message': 'Pending transaction'}` execute the block again. Or you can use the @retry decorator as in deploying the contract.
 {% endhint %}
-
-Now reexecute the block to check the balance of deployer and caller address. 5 tokens will be transferred to the random address from deployer address. 
 
 
 **CONGRATULATIONS! You have successfully created a token in ICON blockchain, and transferred fund from to another address!**
