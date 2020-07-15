@@ -175,10 +175,6 @@ signed_transaction = SignedTransaction(call_transaction, deployer_wallet, step_l
 
 tx_hash = icon_service.send_transaction(signed_transaction)
 
-def get_tx_result(_tx_hash):
-    tx_result = icon_service.get_transaction_result(_tx_hash)
-    return tx_result
-
 tx_result = get_tx_result(tx_hash)
 ```
 
