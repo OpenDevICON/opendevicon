@@ -174,8 +174,12 @@ step_limit = estimate_step + 100000
 signed_transaction = SignedTransaction(call_transaction, deployer_wallet, step_limit)
 
 tx_hash = icon_service.send_transaction(signed_transaction)
-tx_result = icon_service.get_transaction_result(_tx_hash)
-tx_result
+
+def get_tx_result(_tx_hash):
+    tx_result = icon_service.get_transaction_result(_tx_hash)
+    return tx_result
+
+tx_result = get_tx_result(tx_hash)
 ```
 
 Now reexecute the block to check the balance of deployer and caller address. 5 tokens will be transferred to the random address from deployer address. 

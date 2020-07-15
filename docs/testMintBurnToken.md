@@ -40,8 +40,12 @@ step_limit = estimate_step + 100000
 signed_transaction = SignedTransaction(update_transaction, deployer_wallet, step_limit)
 
 tx_hash = icon_service.send_transaction(signed_transaction)
-tx_result = icon_service.get_transaction_result(_tx_hash)
-tx_result
+
+def get_tx_result(_tx_hash):
+    tx_result = icon_service.get_transaction_result(_tx_hash)
+    return tx_result
+
+tx_result = get_tx_result(tx_hash)
 ```
 
 
@@ -67,8 +71,12 @@ step_limit = estimate_step + 100000
 signed_transaction = SignedTransaction(call_transaction, deployer_wallet, step_limit)
 
 tx_hash = icon_service.send_transaction(signed_transaction)
-tx_result = icon_service.get_transaction_result(_tx_hash)
-tx_result
+
+def get_tx_result(_tx_hash):
+    tx_result = icon_service.get_transaction_result(_tx_hash)
+    return tx_result
+
+tx_result = get_tx_result(tx_hash)
 ```
 After this block finishes executing, reexecute the block to check the total supply and deployer balance. 5 tokens must be added to total supply as well as the deployer address. 
 
@@ -96,8 +104,12 @@ step_limit = estimate_step + 100000
 signed_transaction = SignedTransaction(call_transaction, deployer_wallet, step_limit)
 
 tx_hash = icon_service.send_transaction(signed_transaction)
-tx_result = icon_service.get_transaction_result(_tx_hash)
-tx_result
+
+def get_tx_result(_tx_hash):
+    tx_result = icon_service.get_transaction_result(_tx_hash)
+    return tx_result
+
+tx_result = get_tx_result(tx_hash)
 ```
 After this block finishes executing, now reexecute the block to check the total supply and random address balance. 5 tokens are added to total supply as well as the caller address.  
 
@@ -123,8 +135,12 @@ step_limit = estimate_step + 100000
 signed_transaction = SignedTransaction(call_transaction, deployer_wallet, step_limit)
 
 tx_hash = icon_service.send_transaction(signed_transaction)
-tx_result = icon_service.get_transaction_result(_tx_hash)
-tx_result
+
+def get_tx_result(_tx_hash):
+    tx_result = icon_service.get_transaction_result(_tx_hash)
+    return tx_result
+
+tx_result = get_tx_result(tx_hash)
 ```
 After this block finishes executing, now reexecute the block to check the total supply and deployer balance. 5 tokens is subtracted from total supply as well as from the deployer address. 
 
@@ -151,8 +167,12 @@ step_limit = estimate_step + 100000
 signed_transaction = SignedTransaction(call_transaction, deployer_wallet, step_limit)
 
 tx_hash = icon_service.send_transaction(signed_transaction)
-tx_result = icon_service.get_transaction_result(_tx_hash)
-tx_result
+
+def get_tx_result(_tx_hash):
+    tx_result = icon_service.get_transaction_result(_tx_hash)
+    return tx_result
+
+tx_result = get_tx_result(tx_hash)
 ```
 
 After this block finishes executing, now reexecute the block to check the total supply and random address balance. 5 tokens is deducted from total supply as well as from the caller address. 
