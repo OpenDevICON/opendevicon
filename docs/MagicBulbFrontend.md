@@ -107,6 +107,8 @@ export default function Login() {
 
 ## Signing a transaction
 
+You can use magic to sign the transaction for the user.
+
 ```javascript
 // Building a transaction
 const txObj = new IconBuilder.IcxTransactionBuilder()

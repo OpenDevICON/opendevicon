@@ -1,10 +1,10 @@
 # Magic Bulb SCORE
 
 Magic Bulb SCORE is a simple SCORE that essentially consists of two methods:-
-- set_color : It takes color as a param and sets it to the color of the bulb
-- get_color : It returns the present color of the bulb
+- set_color : It takes color as a param and sets it to the color of the bulb.
+- get_color : It returns the present color of the bulb.
 
-Following shows the sorce code for the Magic Bulb SCORE:-
+Following shows the source code for the Magic Bulb SCORE:-
 ```py
 from iconservice import *
 
