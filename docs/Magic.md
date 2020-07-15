@@ -6,8 +6,11 @@
 
 Magic enables the authentication process through following steps:
 - User login with their email address and a **magic link** is sent to the address through use of Magic SDK.
+![](../assets/login.png)
 - User clicks on that link for authenticating to the application.
+![](../assets/link.png)
 - Successful login message is shown up and user is securely logged in.
+![](../assets/logout.png)
 
 {% hint style="info" %}
 If it's a web application, users are logged into the original tab, even if the user clicked on the magic link on a different browser or mobile device!
