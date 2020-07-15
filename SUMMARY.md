@@ -26,7 +26,15 @@
 	* [IRC2 Capped](docs/IRC2Capped.md)
 	* [IRC2 Pausable](docs/IRC2Pausable.md)
 	* [IRC2 Snapshot](docs/IRC2Snapshot.md)
-* [Deck module](docs/deck.md)
-* [Random function generation](docs/random.md)
+
+## Magic Bulb App
+* [Magic](docs/Magic.md)
+* [Magic Bulb Components](docs/MagicBulbComponents.md)
+  * [Magic Bulb SCORE](docs/MagicBulbSCORE.md)
+  * [Magic Bulb Frontend](docs/MagicBulbFrontend.md)
+
+
+
+
 
 
