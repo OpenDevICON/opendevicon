@@ -112,14 +112,14 @@ def _transfer(self, _from: Address, _to: Address, _value: int, _data: bytes = No
 ```
 
 ####\_mint
-Creates `amount` number of tokens, and assigns to `account`. Increases the balance of that `account` and total supply. Only the address which owns the contract can `_mint` tokens.
+Creates `amount` number of tokens, and assigns to `account`. Increases the balance of that `account` and total supply. Only the minters and address which owns the contract can `_mint` tokens.
 ```Python
 @only_owner
 def _mint(self, account:Address, amount:int) -> None:
 ```
 
 ####\_burn
-Destroys `amount` number of tokens from account with address `account`. Decreases the balance of that `account` and total supply. Only the address which owns the contract can `_burn` tokens.
+Destroys `amount` number of tokens from account with address `account`. Decreases the balance of that `account` and total supply. Only the burners and address which owns the contract can `_burn` tokens.
 ```Python
 @only_owner
 def _burn(self, account:Address, amount:int) -> None:

@@ -1,7 +1,7 @@
 # IRC2Pausable
 IRC2 Pausable tokens are IRC2-compatible tokens with one added feature: token transfers can be paused and unpaused as per the requirement. Standard IRC2 tokens don't have this feature.
 
-Only owner of SCORE can pause and unpause token transfers. When paused, no token transfers can take place - this also includes minting, burning. 
+Only owner of SCORE and pausers can pause and unpause token transfers. When paused, no token transfers can take place - this also includes minting, burning. 
 
 {% hint style="warning" %}
 Note: When the tokens are paused, token transfers are NOT suspended for later. Token transfers simply cannot proceed. 
@@ -18,7 +18,7 @@ def paused(self) -> bool:
 ```
 
 #### pause
-Pauses the token transfers. This method can be executed only by the owner of SCORE when the SCORE is not in paused state. It emits Paused event.
+Pauses the token transfers. This method can be executed only by the owner of SCORE and pausers when the SCORE is not in paused state. It emits Paused event.
 ```
 @external
 @whenNotPaused
@@ -27,7 +27,7 @@ def pause(self):
 ```
 
 #### unpause
-Unpauses the token transfers. This method can be executed only by the owner of SCORE when the SCORE is already in paused state. It emits Unpaused event.
+Unpauses the token transfers. This method can be executed only by the owner of SCORE when the SCORE and pausers is already in paused state. It emits Unpaused event.
 ```
 @external
 @whenPaused

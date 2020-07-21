@@ -15,16 +15,7 @@ class SampleToken(IRC2Burnable, IRC2Mintable):
 
 Now, since we changed the token, we need to update the contract. Execute this block to update the contract again without making change to other blocks.
 
-> While updating the contract, the parameters can be changed as well.
-
 ```Python
-UPDATE_PARAMS =  {
-            "_tokenName": "TestToken",
-            "_symbolName": "TK",
-            "_initialSupply": 1000,
-            "_decimals": 18
-        }
-
 update_transaction = DeployTransactionBuilder()\
     .from_(deployer_wallet.get_address())\
     .to(SCORE_ADDRESS)\
@@ -32,7 +23,6 @@ update_transaction = DeployTransactionBuilder()\
     .nonce(100)\
     .content_type("application/zip")\
     .content(gen_deploy_data_content('sampletoken'))\
-    .params(UPDATE_PARAMS)\
     .build()
 
 estimate_step = icon_service.estimate_step(update_transaction)
@@ -47,7 +37,7 @@ tx_result
 
 
 ### Test mint method
-Using this method, `_amount` tokens can be minted to deployer address. Only the deployer can call this method.
+Using this method, `_amount` tokens can be minted to deployer address. Only the deployer and minters can call this method.
 ```Python
 params={
     "_amount": 5,
@@ -76,7 +66,7 @@ After this block finishes executing, reexecute the block to check the total supp
 
 ### Test mintTo method
 
-Using this method, tokens can be minted to other address as well. However, only the deployer can call this method. Here, `_amount` number of tokens will be minted to `_account`.
+Using this method, tokens can be minted to other address as well. However, only the deployer and minters can call this method. Here, `_amount` number of tokens will be minted to `_account`.
 ```Python
 params={
     "_account": caller_wallet.get_address(),
@@ -105,7 +95,7 @@ tx_result
 After this block finishes executing, now reexecute the block to check the total supply and random address balance. 5 tokens are added to total supply as well as the caller address.  
 
 ### Test burn method
-Using this method, `_amount` tokens can be destroyed from deployer address. Only the deployer can call this method.
+Using this method, `_amount` tokens can be destroyed from deployer address. Only the deployer and burners can call this method.
 ```Python
 params={
     "_amount": 5,
@@ -133,7 +123,7 @@ tx_result
 After this block finishes executing, now reexecute the block to check the total supply and deployer balance. 5 tokens is subtracted from total supply as well as from the deployer address. 
 
 ### Test burnFrom method
-Using this method, tokens can be destroyed from other address as well. However, only the deployer can call this method.
+Using this method, tokens can be destroyed from other address as well. However, only the deployer and burners can call this method.
 ```Python
 params={
     "_account": caller_wallet.get_address(),

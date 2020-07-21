@@ -44,6 +44,12 @@ token-test
 ├── sampletoken
    ├── __init__.py
    ├── ODIContracts
+   │   ├── access
+   │   │   ├── role
+   │   │   │   ├── BurnerRole.py
+   │   │   │   ├── MinterRole.py
+   │   │   │   └── PauserRole.py
+   │   │   └── roles.py
    │   ├── __init__.py
    │   ├── tokens
    │   │   ├── IIRC2.py
