@@ -28,7 +28,7 @@ def removeBurner(self, _account: Address) -> bool:
 ```
 
 ####renounceBurner
-`_account` renounces the position as a burner. Then, the `_account` no longer has permission to burn the tokens. Can be called only by the burners.
+Can be called only by burners. Renounces the position of address who executes this method as a burner. Then, the address no longer has permission to burn the tokens. 
 ```py
 def renounceBurner(self) -> bool:
 ```

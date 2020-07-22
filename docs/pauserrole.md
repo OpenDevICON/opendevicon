@@ -28,7 +28,7 @@ def removePauser(self, _account: Address) -> bool:
 ```
 
 ####renouncePauser
-`_account` renounces the position as a pauser. Then, the `_account` no longer has permission to pause and unpause  the tokens. Can be called only by the pausers.
+Can be called only by the pausers. Renounces the position of address who executes this method as a pauser. Then, the `_account` no longer has permission to pause and unpause  the tokens..
 ```py
 def renouncePauser(self) -> bool:
 ```

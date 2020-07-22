@@ -28,7 +28,7 @@ def removeMinter(self, _account: Address) -> bool:
 ```
 
 ####renounceMinter
-`_account` renounces the position as a minter. Then, the `_account` no longer has permission to mint the tokens. Can be called only by the minters.
+Can be called only by the minters. Renounces the position of address who executes this method as a minter. Then, the `_account` no longer has permission to mint the tokens. 
 ```py
 def renounceMinter(self) -> bool:
 ```
