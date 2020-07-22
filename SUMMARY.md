@@ -26,6 +26,10 @@
 	* [IRC2 Capped](docs/IRC2Capped.md)
 	* [IRC2 Pausable](docs/IRC2Pausable.md)
 	* [IRC2 Snapshot](docs/IRC2Snapshot.md)
+* [Access](docs/roles.md)
+	* [Minter Role](docs/minterrole.md)
+	* [Burner Role](docs/burnerrole.md)
+	* [Pauser Role](docs/pauserrole.md)
 
 ## Magic Bulb App
 * [Magic](docs/Magic.md)
