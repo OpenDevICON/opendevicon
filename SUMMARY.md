@@ -30,7 +30,7 @@
 	* [Minter Role](docs/minterrole.md)
 	* [Burner Role](docs/burnerrole.md)
 	* [Pauser Role](docs/pauserrole.md)
-* [NFT](docs/nft.md)
+* [IRC3](docs/nft.md)
 	* [Idol Token](docs/idoltoken.md)
 	* [Test Idol Token](docs/testidoltoken.md)
 
