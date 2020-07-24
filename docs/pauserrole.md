@@ -12,7 +12,7 @@ def isPauser(self, _account: Address) -> bool:
 ####pausersList
 Returns the list of pausers. It calls the internal function `_pausersList` from roles.
 ```python
-def pausersList(self) -> None:
+def pausersList(self):
 ```
 
 ####addPauser

@@ -12,7 +12,7 @@ def isMinter(self, _account: Address) -> bool:
 ####mintersList
 Returns the list of minters. It calls the internal function `_mintersList` from roles.
 ```python
-def mintersList(self) -> None:
+def mintersList(self):
 ```
 
 ####addMinter

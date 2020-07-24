@@ -12,7 +12,7 @@ def isBurner(self, _account: Address) -> bool:
 ####burnersList
 Returns the list of burners. It calls the internal function `_burnersList` from roles.
 ```python
-def burnersList(self) -> None:
+def burnersList(self):
 ```
 
 ####addBurner
