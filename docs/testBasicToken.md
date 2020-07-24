@@ -10,7 +10,7 @@
 $ mkdir token-test
 $ cd token-test
 $ tbears init sampletoken SampleToken
-$ cd token
+$ cd sampletoken
 ```
 
 
@@ -41,33 +41,36 @@ $ pip install odi-token-contracts -t .
 ODIContracts library will be in sampletoken directory along with \__init__.py, package.json and sampletoken.py. The tree structure is:
 ```
 token-test
-├── sampletoken
-   ├── __init__.py
-   ├── ODIContracts
-   │   ├── access
-   │   │   ├── role
-   │   │   │   ├── BurnerRole.py
-   │   │   │   ├── MinterRole.py
-   │   │   │   └── PauserRole.py
-   │   │   └── roles.py
-   │   ├── __init__.py
-   │   ├── tokens
-   │   │   ├── IIRC2.py
-   │   │   ├── __init__.py
-   │   │   ├── IRC2burnable.py
-   │   │   ├── IRC2capped.py
-   │   │   ├── IRC2mintable.py
-   │   │   ├── IRC2pausable.py
-   │   │   ├── IRC2.py
-   │   │   ├── IRC2snapshot.py
-   │   └── utils
-   │       ├── checks.py
-   │       ├── consts.py
-   │       ├── __init__.py
-   │       ├── pausable.py
-   ├── odi_token_contracts-0.0.1.dist-info
-   ├── package.json
-   └── sampletoken.py
+└── sampletoken
+    ├── __init__.py
+    ├── ODIContracts
+    │   ├── access
+    │   │   ├── __init__.py
+    │   │   ├── role
+    │   │   │   ├── BurnerRole.py
+    │   │   │   ├── __init__.py
+    │   │   │   ├── MinterRole.py
+    │   │   │   ├── PauserRole.py
+    │   │   └── roles.py
+    │   ├── __init__.py
+    │   ├── tokens
+    │   │   ├── IIRC2.py
+    │   │   ├── __init__.py
+    │   │   ├── IRC2burnable.py
+    │   │   ├── IRC2capped.py
+    │   │   ├── IRC2mintable.py
+    │   │   ├── IRC2pausable.py
+    │   │   ├── IRC2.py
+    │   │   ├── IRC2snapshot.py
+    │   └── utils
+    │       ├── checks.py
+    │       ├── consts.py
+    │       ├── __init__.py
+    │       ├── pausable.py
+    ├── odi_token_contracts-0.0.3.dist-info
+    ├── package.json
+    └── sampletoken.py
+
 ```
 {% hint style="info"%}
 All `__pycache__` folders and contents of `odi_token_contracts-0.0.1.dist-info` are ignored in this tree. 
