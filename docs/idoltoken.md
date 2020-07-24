@@ -1,3 +1,6 @@
+#Non Fungible Token(NFT)
+The standard interface for NFT on ICON network is provided by the IRC3 token standard proposed(now finalised) under [iip3](https://github.com/icon-project/IIPs/blob/master/IIPS/iip-3.md).
+
 #Idol Token
 Idol token is a sample NFT built on ICON network with the IRC3 standard.There are some custom methods in the score to make things easier and avoid redundancy.The specifications of the token and the implementation are discussed in detail below.
 
@@ -213,14 +216,18 @@ def Approval(self, _owner: Address, _approved: Address, _tokenId: int):
 ## Differences between IRC2 tokens and IRC3 tokens:
 |IRC2|IRC3|
 |:---|:---|
-|It has standard interface for a fungible token.|It has standard interface for a non-fungible token.|
+|It has standard interface for a fungible token|It has standard interface for a non-fungible token|
+|:---|:---|
 Owner can directly send their token to any address without calling the approve method.|The owner needs to approve the tokenId of a token before transferring the token.|
+|:---|:---|
 |The tokens can have decimal values.(eg a person can have 2.34444 tokens)|The tokens cannot have decimal values.They must be in integer.(eg:a person cannot have 2.34444 tokens ,he can have 2 or 3 or any other integer value)|
+|:---|:---|
 |Each  token don’t have specific token_id|Each token have a unique token_id|
+|:---|:---|
 |Token fallback mechanism is adopted|approve/transferFrom method is adopted|
 |Inspired by ERC223 token standard|Inspired by ERC721 token standard|
 
 
 
 ## Implementation
-* [Idol Token](https://github.com/ibriz/ibriz-icon-foundation-idoltoken, "IDOL Token")
+* [Idol Token](https://github.com/ibriz/ibriz-icon-foundation-idoltoken/tree/contract_update, "IDOL Token")

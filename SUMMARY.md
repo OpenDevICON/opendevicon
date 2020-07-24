@@ -30,9 +30,7 @@
 	* [Minter Role](docs/minterrole.md)
 	* [Burner Role](docs/burnerrole.md)
 	* [Pauser Role](docs/pauserrole.md)
-
-### NFT (docs/nft.md)
-* [Idol Token](docs/idoltoken.md)
+* [NFT Idol Token](docs/idoltoken.md)
 
 ## Magic Bulb App
 * [Magic](docs/Magic.md)
