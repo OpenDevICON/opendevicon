@@ -223,6 +223,12 @@ def Approval(self, _owner: Address, _approved: Address, _tokenId: int):
 |Token fallback mechanism is adopted|approve/transferFrom method is adopted|
 |Inspired by ERC223 token standard|Inspired by ERC721 token standard|
 
+References:
+* https://github.com/icon-project/IIPs/blob/master/IIPS/iip-3.md
+* https://github.com/icon-project/IIPs/blob/master/IIPS/iip-2.md
+* https://github.com/icon2infiniti/Samples/blob/master/IRC3/sample_irc3/sample_irc3.py
+
+
 
 
 ## Implementation
