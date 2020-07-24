@@ -1,6 +1,3 @@
-#Non Fungible Token(NFT)
-The standard interface for NFT on ICON network is provided by the IRC3 token standard proposed(now finalised) under [iip3](https://github.com/icon-project/IIPs/blob/master/IIPS/iip-3.md).
-
 #Idol Token
 Idol token is a sample NFT built on ICON network with the IRC3 standard.There are some custom methods in the score to make things easier and avoid redundancy.The specifications of the token and the implementation are discussed in detail below.
 
@@ -36,7 +33,7 @@ def name(self) -> str:
 ```
 
 ####symbol
-Returns the symbol of a token. Any abbreviated form can be given as symbol,token symbol with all letters in uppercase is a general trend while giving the symbol.
+Returns the symbol of a token. Any abbreviated form can be given as symbol, token symbol with all letters in uppercase is a general trend while giving the symbol.
 ```py
 @external(readonly=True)
 def symbol(self) -> str:
@@ -44,7 +41,7 @@ def symbol(self) -> str:
 ```
 
 ####balanceOf
-Returns the number of Idol Tokens owned by any owner.The function takes \_owner of type address as parameter and returns the total number of Idol Tokens belonging to that address. NFTs assigned to the zero address are considered invalid, so this function should raise error for queries about the zero address.
+Returns the number of `Idol Tokens` owned by any `_owner`.The function takes `_owner` of type address as parameter and returns the total number of `Idol Tokens` belonging to that address. NFTs assigned to the zero address are considered invalid, so this function should raise error for queries about the zero address.
 ```py
 @external(readonly=True)
 def balanceOf(self, _owner: Address) -> int:
@@ -54,7 +51,7 @@ def balanceOf(self, _owner: Address) -> int:
 ```
 
 ####ownerOf
-Returns the owner of the Idol Token of a given id. Throws error if the given `_tokenId` is invalid.
+Returns the owner of the `Idol Token` of a given id. Throws error if the given `_tokenId` is invalid.
 ```py
 @external(readonly=True)
 def ownerOf(self, _tokenId: int) -> Address:
@@ -77,7 +74,7 @@ def getApproved(self, _tokenId: int) -> Address:
 ```
 
 ####approve
-Allows `_to` to change the ownership of `_tokenId` from your account. The zero address indicates there is no approved address. Throws unless self.msg.sender is the current `_tokenId` owner. Only the current owner of the Idol token can approve for the transfer. The current owner can approve their car token to any other address except the zero address.
+Allows `_to` to change the ownership of `_tokenId` from your account. The zero address indicates there is no approved address. Throws unless `self.msg.sender` is the current `_tokenId` owner. Only the current owner of the `Idol Token` can approve for the transfer. The current owner can approve their car token to any other address except the zero address.
 ```py
 @external
 def approve(self, _to: Address, _tokenId: int):
@@ -91,7 +88,7 @@ def approve(self, _to: Address, _tokenId: int):
 ```
 
 ####transfer
-Transfers the ownership of a idol token from the current owner of the token to other user. This method must fire an event named Transfer(this will discussed later in another section). This method should throw error in case self.msg.sender  is not the current owner of the token, if the receiving address of the token is a zero address and if the `_tokenId`  is not a valid token id. Then, it calls the \_transfer internal function.
+Transfers the ownership of a idol token from the current owner of the token to other user. This method must fire an event named Transfer(this will discussed later in another section). This method should throw error in case `self.msg.sender`  is not the current owner of the token, if the receiving address of the token is a zero address and if the `_tokenId`  is not a valid token id. Then, it calls the \_transfer internal function.
 ```py
 @external
 def transfer(self, _to: Address, _tokenId: int):
@@ -107,7 +104,7 @@ def transfer(self, _to: Address, _tokenId: int):
 ```
 
 ####transferFrom
-Transfers the ownership of a idol token from the current owner of the token to other user. This method must fire an event named Transfer. It throws error unless self.msg.sender is the current owner or the approved address for the car token, throws error if `_from` is not the current owner, throws error if `_to` is the zero address and throws error  if `_tokenId` is not a valid idol token(\_tokenId).
+Transfers the ownership of a idol token from the current owner of the token to other user. This method must fire an event named Transfer. It throws error unless `self.msg.sender` is the current owner or the approved address for the car token, throws error if `_from` is not the current owner, throws error if `_to` is the zero address and throws error  if `_tokenId` is not a valid idol token(\_tokenId).
 
 ```py
 @external
@@ -124,7 +121,7 @@ def transferFrom(self, _from: Address, _to: Address, _tokenId: str):
 ```
 
 ####create_idol
-Used to create a new Idol Token. The token will have `_name`, `_age`, `_gender` and `_ipfs_handle` as parameters. `_ipfs_handle` is the ipfs hash of the image of the idol.
+Used to create a new `Idol Token`. The token will have `_name`, `_age`, `_gender` and `_ipfs_handle` as parameters. `_ipfs_handle` is the ipfs hash of the image of the idol.
 ```py
 @external
 def create_idol(self, _name: str, _age: str, _gender: str, _ipfs_handle: str):
@@ -138,7 +135,7 @@ def create_idol(self, _name: str, _age: str, _gender: str, _ipfs_handle: str):
 ```
 
 ####get_idol
-Returns the Icon Token which has the id `_tokenId`. 
+Returns the `Idol Token` which has the id `_tokenId`. 
 ```py
 @external(readonly=True)
 def get_idol(self, _tokenId: int) -> dict:
@@ -150,7 +147,7 @@ def get_idol(self, _tokenId: int) -> dict:
 	return idol_attribs
 ```
 ####get_tokens_of_owner
-Returns all the Idol Tokens owned by the `_owner`.
+Returns all the `Idol Tokens` owned by the `_owner`.
 ```py
 @external(readonly=True)
 def get_tokens_of_owner(self, _owner: Address) -> dict:
@@ -165,7 +162,7 @@ def get_tokens_of_owner(self, _owner: Address) -> dict:
 ## Internal Function 
 
 ####\_is_zero_address
-It is a custom method to check whether a given `_address` is a zero address or not, it returns True if the address is a zero address and vice-versa. Its code implementation is below:
+It is a custom method to check whether a given `_address` is a zero address or not, it returns True if the `_address` is a zero address and vice-versa. Its code implementation is below:
 ```py
 def _is_zero_address(self, _address: Address) -> bool:
     # Check if address is zero address
@@ -184,7 +181,7 @@ def _id_validity(self,_tokenId)-> bool:
 ```
 
 ####\_transfer
-It is a custom method which transfer the ownership from owner address to the receiving address if the transfer details are valid. We are going to use the same transfer logic in another method also so, it would be better to make a custom method to avoid redundancy. The implementation of this method is below:
+It is a custom method which transfer the ownership from owner address to the receiving address if the transfer details are valid. The same transfer logic is used in `transfer` and `transferFrom` also so, it would be better to make a custom method to avoid redundancy. The implementation of this method is below:
 ```py
 def _transfer(self,_from:Address,_to:Address,_tokenId:int):
 	self._idolOwner[str(_tokenId)]=_to
@@ -205,7 +202,7 @@ def Transfer(self, _from: Address, _to: Address, _tokenId: int):
 ```
 
 ####Approve:
-This event is triggered when a successful call to approve(Address,int)  method is done.
+This event is triggered when token is successfully approved for transfer from the current owner, i.e. `approve` method is successfully executed 
 ```py
 @eventlog(indexed=3)
 def Approval(self, _owner: Address, _approved: Address, _tokenId: int):
@@ -228,8 +225,7 @@ References:
 * https://github.com/icon-project/IIPs/blob/master/IIPS/iip-2.md
 * https://github.com/icon2infiniti/Samples/blob/master/IRC3/sample_irc3/sample_irc3.py
 
-
-
+---
 
 ## Implementation
-* [Idol Token](https://github.com/ibriz/ibriz-icon-foundation-idoltoken/tree/contract_update, "IDOL Token")
+* [Idol Token](https://github.com/ibriz/ibriz-icon-foundation-idoltoken/blob/contract_update/idol_token/idol_token.py)
