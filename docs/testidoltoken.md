@@ -30,7 +30,7 @@ Now, go to the homepage. The new token is created and is owned by `hxaad0d6e403a
 ![](../assets/listofidols.png)
 
 ## Transfer Idol Token
-To transfer a token to another address, select a token. In this case, we select the token we just created, i.e. the  Angelina Jolie token.
+To transfer a token to another address, select a token. In this case, we select the token we just created, i.e. the Selena Gomez token.
 
 
 ![](../assets/selecttoken.png)
