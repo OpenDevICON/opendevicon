@@ -26,19 +26,22 @@
 	* [IRC2 Capped](docs/IRC2Capped.md)
 	* [IRC2 Pausable](docs/IRC2Pausable.md)
 	* [IRC2 Snapshot](docs/IRC2Snapshot.md)
-* [Access](docs/roles.md)
-	* [Minter Role](docs/minterrole.md)
-	* [Burner Role](docs/burnerrole.md)
-	* [Pauser Role](docs/pauserrole.md)
-* [IRC3](docs/nft.md)
-	* [Idol Token](docs/idoltoken.md)
-	* [Test Idol Token](docs/testidoltoken.md)
+	* [Access](docs/roles.md)
+		* [Minter Role](docs/minterrole.md)
+		* [Burner Role](docs/burnerrole.md)
+		* [Pauser Role](docs/pauserrole.md)
 
-## Magic Bulb App
-* [Magic](docs/Magic.md)
-* [Magic Bulb Components](docs/MagicBulbComponents.md)
-  * [Magic Bulb SCORE](docs/MagicBulbSCORE.md)
-  * [Magic Bulb Frontend](docs/MagicBulbFrontend.md)
+##ICON dApps
+	# NFT Idol Token Demo
+	* [NFT](docs/nft.md)
+		* [Idol Token](docs/idoltoken.md)
+		* [Test Idol Token](docs/testidoltoken.md)
+
+	## Magic Bulb App
+	* [Magic](docs/Magic.md)
+		* [Magic Bulb Components](docs/MagicBulbComponents.md)
+		  * [Magic Bulb SCORE](docs/MagicBulbSCORE.md)
+		  * [Magic Bulb Frontend](docs/MagicBulbFrontend.md)
 
 
 
