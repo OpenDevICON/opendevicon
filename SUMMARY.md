@@ -32,13 +32,11 @@
 		* [Pauser Role](docs/pauserrole.md)
 
 ##ICON dApps
-	# NFT Idol Token Demo
-	* [NFT](docs/nft.md)
+	* [NFT Idol Token](docs/nft.md)
 		* [Idol Token](docs/idoltoken.md)
 		* [Test Idol Token](docs/testidoltoken.md)
 
-	## Magic Bulb App
-	* [Magic](docs/Magic.md)
+	* [Magic Bulb App](docs/Magic.md)
 		* [Magic Bulb Components](docs/MagicBulbComponents.md)
 		  * [Magic Bulb SCORE](docs/MagicBulbSCORE.md)
 		  * [Magic Bulb Frontend](docs/MagicBulbFrontend.md)
