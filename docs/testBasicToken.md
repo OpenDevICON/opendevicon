@@ -9,10 +9,14 @@
 ```Shell
 $ mkdir token-test
 $ cd token-test
+``` 
+
+Then, use `tbears init` command to create a SCORE project.
+
+```
 $ tbears init sampletoken SampleToken
 $ cd sampletoken
 ```
-
 
 Boilerplate for your token will be initialized. The project tree is:
 ```
@@ -27,21 +31,24 @@ Boilerplate for your token will be initialized. The project tree is:
         └── sampletoken.py
 ```   
 
-Remove tests directory from token as we will not be using it to test our token. 
+Remove tests directory from token as we will not be using it to test our token. Also, the imports in the files of tests directory causes problem while testing with jupyter notebook.
 
 ```Shell
 $ rm -rf tests
 ```
 
-Now, install **[ODI Contracts]()** library. Package import is prohibited except iconservice and the files in your deployed SCORE folder tree. So, the ODI Contracts library should be inside the directory, and cannot be imported from outside.
+Now, install **[ODI Contracts]()** library. Package import is prohibited except iconservice and the files in your deployed SCORE folder tree. So, the ODI Contracts library should be inside the directory, and cannot be imported from outside. 
 
 ```Shell
 $ pip install odi-token-contracts -t .
 ```
+
 ODIContracts library will be in sampletoken directory along with \__init__.py, package.json and sampletoken.py. The tree structure is:
+
 ```
 token-test
-└── sampletoken
+.
+├── sampletoken
     ├── __init__.py
     ├── ODIContracts
     │   ├── access
@@ -89,10 +96,28 @@ class SampleToken(IRC2):
 ```
 ---
 
-Make a new python notebook in the *token-test* directory, and follow the steps as mentioned in **[SCORE Interaction](scoreInteraction.md)**.
+Then, go back to token-test directory.
+```shell
+$ cd ..
+```
 
+You'll need [**repeater**](https://raw.githubusercontent.com/OpenDevICON/opendevicon/master/repeater.py) module during testing. Run this command to get repeater module in the current directory.
 
-Now you should have deployer_wallet and caller_wallet address. Load test ICX to deployer_wallet address. caller_wallet will be used as a random wallet to test methods.
+```shell
+$ wget https://raw.githubusercontent.com/OpenDevICON/opendevicon/master/repeater.py
+```
+
+Now, you'll have repeater.py module in token-test directory.  \
+
+Now, open jupyter-notebook using the following command:
+
+```shell
+$ jupyter-notebook
+```
+
+Now you can see a Jupyter instance running in your browser. Click New, and select python 3 in the dropdown to create a new notebook with python3. Then, follow the steps as mentioned in **[SCORE Interaction](https://docs.opendevicon.io/v/development/jupyter-notebook/scoreinteraction#setting-up-environment)** from setting-up-environment.
+
+You now should have deployer_wallet and caller_wallet address. Load test ICX to deployer_wallet address. caller_wallet will be used as a random wallet to test methods.
 
 
 ### Deploying the contract
@@ -130,7 +155,7 @@ def get_tx_result(_tx_hash):
 tx_result = get_tx_result(tx_hash)
 SCORE_ADDRESS = tx_result['scoreAddress']
 ```
-The decorator `@retry()` is imported from the [**repeater**](https://github.com/OpenDevICON/opendevicon/blob/master/repeater.py) module. In this case, repeater.py is in the token-test directory.
+The decorator `@retry()` is imported from the **repeater** module.
 
 
 The **scoreAddress** of your deployed SCORE from the **tx_result** will be saved to the variable SCORE_ADDRESS as you will require it while moving forward.
@@ -188,7 +213,7 @@ tx_result = get_tx_result(tx_hash)
 tx_result
 ```
 
-Now reexecute the block to check the balance of deployer and caller address. 5 tokens will be transferred to the random address from deployer address. 
+Now re-execute the block to check the balance of deployer and caller address. 5 tokens will be transferred to the random address from deployer address. 
 
 
-CONGRATULATIONS! You have successfully created a token in ICON blockchain, and transferred fund from to another address!
+CONGRATULATIONS! You have successfully created a token in ICON blockchain, and transferred fund from one address to another address!

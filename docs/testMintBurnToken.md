@@ -1,6 +1,6 @@
 # Implement mintable and burnable tokens
 
-To implement mintable and burnable token, change token.py to implement IRC2burnable and IRC2mintable.<br>
+To implement mintable and burnable token, change sampletoken.py to implement **IRC2burnable** and **IRC2mintable**.<br>
 
 ```Python
 from iconservice import *
