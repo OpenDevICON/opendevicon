@@ -20,24 +20,24 @@ cd sampletoken
 
 Boilerplate for your token will be initialized. The project tree is:
 ```
-└── token-test
-    └── sampletoken
-        ├── __init__.py
-        ├── package.json
-        ├── tests
-        │   ├── __init__.py
-        │   ├── test_integrate_token.py
-        │   └── test_unit_token.py
-        └── sampletoken.py
+token-test
+└── sampletoken
+    ├── __init__.py
+    ├── package.json
+    ├── tests
+    │   ├── __init__.py
+    │   ├── test_integrate_token.py
+    │   └── test_unit_token.py
+    └── sampletoken.py
 ```   
 
-Remove tests directory from token as we will not be using it to test our token. Also, the imports in the files of tests directory causes problem while testing with jupyter notebook.
+Remove _tests_ directory from token as we will not be using it to test our token. Also, the imports in the files of _tests_ directory causes problem while testing with jupyter notebook.
 
 ```Shell
 rm -rf tests
 ```
 
-Now, install **[ODI Contracts]()** library. Package import is prohibited except iconservice and the files in your deployed SCORE folder tree. So, the ODI Contracts library should be inside the directory, and cannot be imported from outside. 
+Now, install **[ODI Contracts]()** library. Package import is prohibited except iconservice and the files in your deployed SCORE folder tree. So, the `ODI Contracts` library should be inside the directory, and cannot be imported from outside. 
 
 ```Shell
 pip install odi-token-contracts -t .
@@ -76,7 +76,6 @@ token-test
     ├── odi_token_contracts-0.0.3.dist-info
     ├── package.json
     └── sampletoken.py
-
 ```
 {% hint style="info"%}
 All `__pycache__` folders and contents of `odi_token_contracts-0.0.1.dist-info` are ignored in this tree. 
@@ -126,7 +125,7 @@ Now you can see a Jupyter instance running in your browser.
 Click on **token-test.ipnyb** file which will be our main Jupyter Notebook file to test IRC2 tokens.  
 
 
-Then, execute the blocks to **import necessary packages**, **icon service**,**NID**,**Governance Address** and **create new wallet**.  
+Then, execute the blocks to **import necessary packages**, **icon service**, **NID**, **Governance Address** and **create new wallet**.  
 
 
 You now should have `deployer_wallet` and `caller_wallet` address. `deployer_wallet` will be used to send IRC2 Token. `caller_wallet` will be used as a random wallet to test methods.
@@ -175,7 +174,7 @@ SCORE_ADDRESS = tx_result['scoreAddress']
 The decorator `@retry()` is imported from the **repeater** module.
 
 
-The **scoreAddress** of your deployed SCORE from the **tx_result** will be saved to the variable `SCORE_ADDRESS` as you will require it while moving forward.
+The **scoreAddress** of your deployed SCORE from the `tx_result` will be saved to the variable `SCORE_ADDRESS` as you will require it while moving forward.
 
 {% hint style="info"%}
 You may encounter `timeout` and `gaierror` error. In that case re-execute the block again.  
