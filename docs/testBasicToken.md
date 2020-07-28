@@ -103,7 +103,6 @@ cd ..
 You'll need [**repeater**](https://github.com/OpenDevICON/opendevicon/blob/master/repeater.py) module during testing. Run this command to get repeater module in the current directory.
 
 ```shell
-
 wget https://raw.githubusercontent.com/OpenDevICON/opendevicon/master/repeater.py
 ```
 
@@ -112,8 +111,7 @@ Now, you have **repeater.py** module in _token-test_ directory.
 Now, download this [**notebook**](https://gist.github.com/lilixac/4541fa7f80f7c40a2ac00a795c7b11d5) to test IRC2 tokens. Run this command to get this notebook in the current directory.
 
 ```shell
-
-wget https://gist.githubusercontent.com/lilixac/4541fa7f80f7c40a2ac00a795c7b11d5/raw/144e5df28de6f5f3779cd1c1baadfa5ce7560842/token-test.ipynb
+https://gist.githubusercontent.com/lilixac/4541fa7f80f7c40a2ac00a795c7b11d5/raw/6a553d9d37bfb7e0926c4e24b1db15fe01a26b8a/token-test.ipynb
 ```
 
 Now, open jupyter-notebook in the this directory using the following command:
@@ -185,7 +183,6 @@ You may encounter `timeout` and `gaierror` error. In that case re-execute the bl
 
 ### Check the name, symbol, decimals and total supply
 ```Python
-
 external_methods = ["name", "symbol", "decimals", "totalSupply"]
 for method in external_methods:
     call = CallBuilder().from_(deployer_wallet.get_address())\
@@ -198,7 +195,6 @@ You have successfully created a token!
 
 ### Check the total number of tokens of caller and deployer address
 ```Python
-
 external_methods = [deployer_wallet.get_address(), caller_wallet.get_address()]
 for address in external_methods:
     call = CallBuilder().from_(deployer_wallet.get_address())\
