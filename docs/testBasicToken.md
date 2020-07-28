@@ -7,15 +7,15 @@
 
 ## Initalize project
 ```Shell
-$ mkdir token-test
-$ cd token-test
+mkdir token-test
+cd token-test
 ``` 
 
 Then, use `tbears init` command to create a SCORE project.
 
 ```
-$ tbears init sampletoken SampleToken
-$ cd sampletoken
+tbears init sampletoken SampleToken
+cd sampletoken
 ```
 
 Boilerplate for your token will be initialized. The project tree is:
@@ -34,20 +34,19 @@ Boilerplate for your token will be initialized. The project tree is:
 Remove tests directory from token as we will not be using it to test our token. Also, the imports in the files of tests directory causes problem while testing with jupyter notebook.
 
 ```Shell
-$ rm -rf tests
+rm -rf tests
 ```
 
 Now, install **[ODI Contracts]()** library. Package import is prohibited except iconservice and the files in your deployed SCORE folder tree. So, the ODI Contracts library should be inside the directory, and cannot be imported from outside. 
 
 ```Shell
-$ pip install odi-token-contracts -t .
+pip install odi-token-contracts -t .
 ```
 
-ODIContracts library will be in sampletoken directory along with \__init__.py, package.json and sampletoken.py. The tree structure is:
+`ODIContracts` library will be in sampletoken directory along with **\__init__.py**, **package.json** and **sampletoken.py**. The tree structure is:
 
 ```
 token-test
-.
 ├── sampletoken
     ├── __init__.py
     ├── ODIContracts
@@ -83,7 +82,7 @@ token-test
 All `__pycache__` folders and contents of `odi_token_contracts-0.0.1.dist-info` are ignored in this tree. 
 {% endhint %}
 
-Then, change sampletoken.py to this. 
+Then, change **sampletoken.py** to this. 
 
 ```Python
 from iconservice import *
@@ -96,41 +95,48 @@ class SampleToken(IRC2):
 ```
 ---
 
-Then, go back to token-test directory.
+Then, go back to _token-test_ directory.
 ```shell
-$ cd ..
+cd ..
 ```
 
 You'll need [**repeater**](https://github.com/OpenDevICON/opendevicon/blob/master/repeater.py) module during testing. Run this command to get repeater module in the current directory.
 
 ```shell
-$ wget https://raw.githubusercontent.com/OpenDevICON/opendevicon/master/repeater.py
+
+wget https://raw.githubusercontent.com/OpenDevICON/opendevicon/master/repeater.py
 ```
 
-Now, you'll have repeater.py module in token-test directory.  
+Now, you have **repeater.py** module in _token-test_ directory.  
 
 Now, download this [**notebook**](https://gist.github.com/lilixac/f61c0dc6752f51ad44c51a9f53b2659c) to test IRC2 tokens. Run this command to get this notebook in the current directory.
 
 ```shell
-$ wget https://gist.githubusercontent.com/lilixac/f61c0dc6752f51ad44c51a9f53b2659c/raw/8b3d0a12ff072c48cad86d161f5978595a01b621/token-test.ipynb
+
+wget https://gist.githubusercontent.com/lilixac/f61c0dc6752f51ad44c51a9f53b2659c/raw/8b3d0a12ff072c48cad86d161f5978595a01b621/token-test.ipynb
 ```
 
-Now, open jupyter-notebook using the following command:
+Now, open jupyter-notebook in the this- directory using the following command:
 
 ```shell
-$ jupyter-notebook
+jupyter-notebook
 ```
 
 Now you can see a Jupyter instance running in your browser.   
 
 
-Click on token-test.ipnyb file which will be our main Jupyter Notebook file to test IRC2 tokens.  
+Click on **token-test.ipnyb** file which will be our main Jupyter Notebook file to test IRC2 tokens.  
 
 
-Then, follow the steps as mentioned in **[SCORE Interaction](https://docs.opendevicon.io/v/development/jupyter-notebook/scoreinteraction#setting-up-environment)** from setting-up-environment. Execute the blocks to `import necessary packages`, `icon service`,`NID`,`Governance Address` and `create new wallet`.  
+Then, execute the blocks to **import necessary packages**, **icon service**,**NID**,**Governance Address** and **create new wallet**.  
 
 
-You now should have deployer_wallet and caller_wallet address. Load test ICX to deployer_wallet address from the [ibriz faucet](https://icon-faucet.ibriz.ai/). caller_wallet will be used as a random wallet to test methods.
+You now should have `deployer_wallet` and `caller_wallet` address. `deployer_wallet` will be used to send IRC2 Token. `caller_wallet` will be used as a random wallet to test methods.
+
+{% hint style="info"%}
+Load test ICX to deployer_wallet address from the [ibriz faucet](https://icon-faucet.ibriz.ai/).
+{% endhint %}
+
 
 
 ### Deploying the contract
@@ -171,10 +177,15 @@ SCORE_ADDRESS = tx_result['scoreAddress']
 The decorator `@retry()` is imported from the **repeater** module.
 
 
-The **scoreAddress** of your deployed SCORE from the **tx_result** will be saved to the variable SCORE_ADDRESS as you will require it while moving forward.
+The **scoreAddress** of your deployed SCORE from the **tx_result** will be saved to the variable `SCORE_ADDRESS` as you will require it while moving forward.
+
+{% hint style="info"%}
+You may encounter `timeout` and `gaierror` error. In that case re-execute the block again.  
+{% endhint %}
 
 ### Check the name, symbol, decimals and total supply
 ```Python
+
 external_methods = ["name", "symbol", "decimals", "totalSupply"]
 for method in external_methods:
     call = CallBuilder().from_(deployer_wallet.get_address())\
@@ -187,6 +198,7 @@ You have successfully created a token!
 
 ### Check the total number of tokens of caller and deployer address
 ```Python
+
 external_methods = [deployer_wallet.get_address(), caller_wallet.get_address()]
 for address in external_methods:
     call = CallBuilder().from_(deployer_wallet.get_address())\

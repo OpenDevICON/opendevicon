@@ -1,6 +1,6 @@
 # Implement mintable and burnable tokens
 
-To implement mintable and burnable token, change sampletoken.py to implement **IRC2burnable** and **IRC2mintable**.<br>
+To implement mintable and burnable token, change **sampletoken.py** to implement **IRC2burnable** and **IRC2mintable**.<br>
 
 ```Python
 from iconservice import *
@@ -62,7 +62,7 @@ tx_hash = icon_service.send_transaction(signed_transaction)
 tx_result = get_tx_result(tx_hash)
 tx_result
 ```
-After this block finishes executing, reexecute the block to check the total supply and deployer balance. 5 tokens must be added to total supply as well as the deployer address. 
+After this block finishes executing, re-execute the block to check the total supply and deployer balance. 5 tokens must be added to total supply as well as the deployer address. 
 
 ### Test mintTo method
 
@@ -92,7 +92,7 @@ tx_hash = icon_service.send_transaction(signed_transaction)
 tx_result = get_tx_result(tx_hash)
 tx_result
 ```
-After this block finishes executing, now reexecute the block to check the total supply and random address balance. 5 tokens are added to total supply as well as the caller address.  
+After this block finishes executing, now re-execute the block to check the total supply and random address balance. 5 tokens are added to total supply as well as the caller address.  
 
 ### Test burn method
 Using this method, `_amount` tokens can be destroyed from deployer address. Only the deployer and burners can call this method.
@@ -120,7 +120,7 @@ tx_hash = icon_service.send_transaction(signed_transaction)
 tx_result = get_tx_result(tx_hash)
 tx_result
 ```
-After this block finishes executing, now reexecute the block to check the total supply and deployer balance. 5 tokens is subtracted from total supply as well as from the deployer address. 
+After this block finishes executing, now re-execute the block to check the total supply and deployer balance. 5 tokens is subtracted from total supply as well as from the deployer address. 
 
 ### Test burnFrom method
 Using this method, tokens can be destroyed from other address as well. However, only the deployer and burners can call this method.
@@ -150,4 +150,4 @@ tx_result = get_tx_result(tx_hash)
 tx_result
 ```
 
-After this block finishes executing, now reexecute the block to check the total supply and random address balance. 5 tokens is deducted from total supply as well as from the caller address. 
+After this block finishes executing, now re-execute the block to check the total supply and random address balance. 5 tokens is deducted from total supply as well as from the caller address. 
