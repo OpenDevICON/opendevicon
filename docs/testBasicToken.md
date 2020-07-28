@@ -109,14 +109,14 @@ wget https://raw.githubusercontent.com/OpenDevICON/opendevicon/master/repeater.p
 
 Now, you have **repeater.py** module in _token-test_ directory.  
 
-Now, download this [**notebook**](https://gist.github.com/lilixac/f61c0dc6752f51ad44c51a9f53b2659c) to test IRC2 tokens. Run this command to get this notebook in the current directory.
+Now, download this [**notebook**](https://gist.github.com/lilixac/4541fa7f80f7c40a2ac00a795c7b11d5) to test IRC2 tokens. Run this command to get this notebook in the current directory.
 
 ```shell
 
-wget https://gist.githubusercontent.com/lilixac/f61c0dc6752f51ad44c51a9f53b2659c/raw/8b3d0a12ff072c48cad86d161f5978595a01b621/token-test.ipynb
+wget https://gist.githubusercontent.com/lilixac/4541fa7f80f7c40a2ac00a795c7b11d5/raw/144e5df28de6f5f3779cd1c1baadfa5ce7560842/token-test.ipynb
 ```
 
-Now, open jupyter-notebook in the this- directory using the following command:
+Now, open jupyter-notebook in the this directory using the following command:
 
 ```shell
 jupyter-notebook
