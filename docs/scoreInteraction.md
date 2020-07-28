@@ -1,27 +1,32 @@
-# SCORE Interaction
+# SCORE Interaction check
 
 ## Jupyter Notebook for ICON Environment
-As a SCORE developer, using tbears for SCORE deploy,update process and making a transaction call is a bit cumbersome. So to make the whole process smooth, SCORE can be handled with a Jupyter Notebook approach where we will be using Python SDK for each operation in different cell. 
 
-We have made a [**template**](https://github.com/OpenDevICON/opendevicon/blob/development/SCORE.ipynb) and all you will have to do is update some parameters to the SDK and execute the cell to perform the operation. This makes us get rid of tbears cli commands hassle while interacting with SCORE.
+As a SCORE developer, using tbears for SCORE deploy,update process and making a transaction call is a bit cumbersome. So to make the whole process smooth, SCORE can be handled with a Jupyter Notebook approach where we will be using Python SDK for each operation in different cell.
 
- Before proceeding ahead make sure the [**prerequisites**](prerequisites.md) are already installed.
+We have made a [**template**](https://github.com/kailehok/opendevicon/blob/master/SCORE.ipynb) and all you will have to do is update some parameters to the SDK and execute the cell to perform the operation. This makes us get rid of tbears cli commands hassle while interacting with SCORE.
 
-## Cloning the project 
+Before proceeding ahead make sure the [**prerequisites**](prerequisites.md) are already installed.
 
-You can get the project repo from [**Github**](https://github.com/OpenDevICON/opendevicon/)
+## Cloning the project
+
+You can get the project repo from [**Github**](https://github.com/kailehok/opendevicon)
 
 ![](../assets/github.png)
 
 Run command:-
+
 ```p![](../assets/github.png)y
 $ git clone https://github.com/OpenDevICON/opendevicon.git
 ```
+
 Open Jupyter Notebook file using command:-
+
 ```py
 $ cd opendevicon
 $ jupyter-notebook
 ```
+
 Now you can see a Jupyter instance running in your browser
 
 ![](../assets/check.png)
@@ -35,9 +40,13 @@ If you are new to Jupyter Notebook, read the [**article**](https://www.codecadem
 {% endhint %}
 
 ## Setting up environment
+
 Before we move on to using the SDK we first need to initialize our environment.
+
 ### Importing packages
+
 All the necessary packages required for using SDK must be imported.
+
 ```py
 from iconsdk.exception import JSONRPCException
 from iconsdk.libs.in_memory_zip import gen_deploy_data_content
@@ -55,17 +64,22 @@ import pickle
 import csv
 import os
 ```
+
 {% hint style="info"%}
 For error msg like `package not found`
 
 Run command:-
+
 ```py
 $ pip install <package-name>
 ```
+
 {% endhint %}
 
 ### Setting up URL
-Create an **IconService** instance and set a provider. The **HTTPProvider** takes one of the following URL where the server can be found. For this documentation we will be using [**Yeouido**](https://bicon.tracker.solidwallet.io/) tesnet. 
+
+Create an **IconService** instance and set a provider. The **HTTPProvider** takes one of the following URL where the server can be found. For this documentation we will be using [**Yeouido**](https://bicon.tracker.solidwallet.io/) tesnet.
+
 ```py
 # Mainnet
 # icon_service = IconService(HTTPProvider("https://ctz.solidwallet.io", 3))
@@ -78,8 +92,11 @@ icon_service = IconService(HTTPProvider("https://bicon.net.solidwallet.io", 3))
 # Custom
 # icon_service = IconService(HTTPProvider("http://54.186.60.134:9000/", 3))
 ```
+
 ### Setting up NID
+
 Netword ID for Yeoido tesnet is 3.
+
 ```py
 # Mainnet
 # NID = 1
@@ -92,11 +109,13 @@ NID = 3
 ```
 
 ### Creating wallets
+
 We will create two wallets, one for deploying SCORE and other for placing bet.
+
 ```py
-deployer_wallet = KeyWallet.create() 
+deployer_wallet = KeyWallet.create()
 print("address: ", deployer_wallet.get_address())
-caller_wallet = KeyWallet.create() 
+caller_wallet = KeyWallet.create()
 print("address: ", caller_wallet.get_address())
 ```
 
@@ -104,12 +123,4 @@ print("address: ", caller_wallet.get_address())
 Go to [**ibriz-faucet**](https://icon-faucet.ibriz.ai/) to receive test ICXs in your wallets.
 {% endhint %}
 
-
-
-
-Now we are all set to use the SDK in Jupyter Notebook. You can get the official documentation of PythonSDK for ICON [**here**](https://www.icondev.io/docs/python-sdk). 
-
-
-
-
-
+Now we are all set to use the SDK in Jupyter Notebook. You can get the official documentation of PythonSDK for ICON [**here**](https://www.icondev.io/docs/python-sdk).
