@@ -101,13 +101,19 @@ Then, go back to token-test directory.
 $ cd ..
 ```
 
-You'll need [**repeater**](https://raw.githubusercontent.com/OpenDevICON/opendevicon/master/repeater.py) module during testing. Run this command to get repeater module in the current directory.
+You'll need [**repeater**](https://github.com/OpenDevICON/opendevicon/blob/master/repeater.py) module during testing. Run this command to get repeater module in the current directory.
 
 ```shell
 $ wget https://raw.githubusercontent.com/OpenDevICON/opendevicon/master/repeater.py
 ```
 
-Now, you'll have repeater.py module in token-test directory.  \
+Now, you'll have repeater.py module in token-test directory.  
+
+Now, download this [**notebook**](https://gist.github.com/lilixac/f61c0dc6752f51ad44c51a9f53b2659c) to test IRC2 tokens. Run this command to get this notebook in the current directory.
+
+```shell
+$ wget https://gist.githubusercontent.com/lilixac/f61c0dc6752f51ad44c51a9f53b2659c/raw/8b3d0a12ff072c48cad86d161f5978595a01b621/token-test.ipynb
+```
 
 Now, open jupyter-notebook using the following command:
 
@@ -115,9 +121,16 @@ Now, open jupyter-notebook using the following command:
 $ jupyter-notebook
 ```
 
-Now you can see a Jupyter instance running in your browser. Click New, and select python 3 in the dropdown to create a new notebook with python3. Then, follow the steps as mentioned in **[SCORE Interaction](https://docs.opendevicon.io/v/development/jupyter-notebook/scoreinteraction#setting-up-environment)** from setting-up-environment.
+Now you can see a Jupyter instance running in your browser.   
 
-You now should have deployer_wallet and caller_wallet address. Load test ICX to deployer_wallet address. caller_wallet will be used as a random wallet to test methods.
+
+Click on token-test.ipnyb file which will be our main Jupyter Notebook file to test IRC2 tokens.  
+
+
+Then, follow the steps as mentioned in **[SCORE Interaction](https://docs.opendevicon.io/v/development/jupyter-notebook/scoreinteraction#setting-up-environment)** from setting-up-environment. Execute the blocks to `import necessary packages`, `icon service`,`NID`,`Governance Address` and `create new wallet`.  
+
+
+You now should have deployer_wallet and caller_wallet address. Load test ICX to deployer_wallet address from the [ibriz faucet](https://icon-faucet.ibriz.ai/). caller_wallet will be used as a random wallet to test methods.
 
 
 ### Deploying the contract
