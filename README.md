@@ -5,7 +5,7 @@ In this documentation you’ll find information on:
 
 - An overview of OpendevICON
 - Tutorials to get you started with [**Python SDK**](docs/prerequisites.md) and [**Jupyter Notebook**](docs/scoreInteraction.md)
-- Reference to [**SCORE library**](docs/deck.md)
+- Reference to [**SCORE library**](docs/roles.md)
 
 ## About OpenDevICON
 **OpenDevICON** is an accelerator program to accelerate the training of ICON developers and reduce friction and wasted time in development of ICON SCOREs, dApps and DAOs.
