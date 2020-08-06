@@ -140,10 +140,10 @@ Load test ICX to deployer_wallet address from the [ibriz faucet](https://icon-fa
 
 ```Python
 DEPLOY_PARAMS =  {
-            "_tokenName": "TestToken",
-            "_symbolName": "TK",
-            "_initialSupply": 1000,
-            "_decimals": 18
+            "_name": "Test Token",
+            "_symbol": "TTKN",
+            "_initialSupply": 250,
+            "_decimals": 18,
         }
 
 
@@ -190,7 +190,7 @@ for method in external_methods:
                     .build()
     print(icon_service.call(call))
 ``` 
-You have successfully created a token!
+You have successfully created a token! This token can be viewed from the [ICON tracker](https://bicon.tracker.solidwallet.io/tokens). Type name or symbol of the token to view the token you just created. 
 
 ### Check the total number of tokens of caller and deployer address
 ```Python
@@ -236,4 +236,4 @@ tx_result
 Now re-execute the block to check the balance of deployer and caller address. 5 tokens will be transferred to the random address from deployer address. 
 
 
-CONGRATULATIONS! You have successfully created a token in ICON blockchain, and transferred fund from one address to another address!
+CONGRATULATIONS! You have successfully created a token in ICON blockchain, and transferred fund from one address to another address! The transfer of tokens can be viewed from [here](https://bicon.tracker.solidwallet.io/tokentransfers)
