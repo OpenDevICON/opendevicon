@@ -29,17 +29,17 @@ Returns the total number of tokens in existence.
 def totalSupply(self) -> int:
 ```
 ####balanceOf
-Returns the amount of tokens owned by the account with address `account`.
+Returns the amount of tokens owned by the account with address `_owner`.
 ```Python
 @external
-def balanceOf(self,account: Address) -> int:
+def balanceOf(self, _owner: Address) -> int:
 ```
 
 ####transfer
 Transfers `_value` amount of tokens to the address `_to` from `self.msg.sender` and fires Transfer eventlog. `self.msg.sender` should have enough balance to transfer to `_to`. If `_to` is a contract, this function must invoke the function `tokenFallback(Address, int, bytes)` in `_to`. If the `tokenFallback` function is not implemented in `_to` (receiver contract), then the transaction must fail and the transfer of tokens should not occur. If `_to` is an externally owned address, then the transaction must be sent without trying to execute `tokenFallback` in `_to`.  `_data` can be attached to this token transaction. `_data` can be empty.
 ```Python
 @external
-def transfer(self, _to: Address, _value: int, _data: bytes = None) -> bool:
+def transfer(self, _to: Address, _value: int, _data: bytes = None):
 ```
 
 ####\_allowance
