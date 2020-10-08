@@ -29,6 +29,17 @@ To run the notebook, run the following command
 $ jupyter-notebook
 ```
 
+If you get the error like: 
+> 'jupyter' is not recognized as an internal or external command
+
+you need to add it to path environment variable. For this, add this line to your .bashrc or .zshrc file and source it.
+
+```shell
+echo "export PATH="$HOME/.local/bin:$PATH"  >> ~/.bashrc
+source ~/.bashrc
+```
+
+
 ## Installing PythonSDK
 The source code is found on [GitHub](https://github.com/icon-project/icon-sdk-python)
 
