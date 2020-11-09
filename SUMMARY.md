@@ -1,7 +1,7 @@
 # Table of contents
 
 * [Welcome](README.md)
-* [Resources](docs/Resources.md)
+* [Resources](docs/resources.md)
 
 ## GETTING STARTED
 * [Prerequisites](docs/prerequisites.md)
