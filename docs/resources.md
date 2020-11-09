@@ -1,7 +1,7 @@
 # Resources
 
 ### Community
-- [**Telegram**](https://t.me/hello_iconworld)
+- [**ICON Telegram**](https://t.me/hello_iconworld)
 
 - [**ICON Community Forum**](https://forum.icon.community/)
 
@@ -14,8 +14,6 @@
 ### Development 
 - [**ICON Documentation**](https://www.icondev.io/)
 
-- [**Getting Started with ICON**](https://medium.com/ibriz-iconosphere/getting-started-with-icon-1efc56c218e9)
-
 - [**For easy testing of SCORES**](https://github.com/OpenDevICON/Checkscore)
 
 - [**Yudus Lab Contract Hub**](https://yudus.dev/icontracthub/)
@@ -23,6 +21,13 @@
 - [**OpenDevICON github**](https://github.com/opendevicon/)
 
 - [**ICON Foundation github**](https://github.com/icon-project) 
+
+### Medium Articles
+- [**ICON Foundation**](https://medium.com/@helloiconworld)
+
+- [**2infiniti articles**](https://medium.com/@2infiniti)
+
+- [**Getting Started with ICON**](https://medium.com/ibriz-iconosphere/getting-started-with-icon-1efc56c218e9)
 
 ### Band Protocol Oracle Integration in SCORE
 
