@@ -1,6 +1,8 @@
 # Resources
 
 ### Community
+- [**Telegram**](https://t.me/hello_iconworld)
+
 - [**ICON Community Forum**](https://forum.icon.community/)
 
 - [**ICON Developer Community**](https://icon.community/developers/)
